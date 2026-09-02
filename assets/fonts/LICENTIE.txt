@@ -1,0 +1,5 @@
+Instrument Sans — SIL Open Font License 1.1 (OFL)
+Ontwerp: Rodrigo Fuenzalida & Jordan Egstad
+Bron:   https://fonts.google.com/specimen/Instrument+Sans
+Licentie staat commercieel gebruik en zelf hosten toe. Variabele woff2, gewicht 400-700.
+Opgehaald 02-09-2026 van fonts.gstatic.com (v4).

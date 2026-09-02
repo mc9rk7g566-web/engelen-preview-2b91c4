@@ -45,7 +45,8 @@
   --papier-2:    #ECEAE5;   /* tweede band, alleen om ritme te maken */
   --inkt:        #17181A;   /* alle lopende tekst, 15,9:1 op papier */
   --inkt-zacht:  #5A5C60;   /* bijschriften, 6,3:1 */
-  --inkt-meta:   #74767A;   /* ondergrens, alleen korte regels */
+  --inkt-meta:   #66686C;   /* ondergrens, alleen korte regels. Ook geijkt op
+                               --papier-2; #74767A haalde daar maar 3,7:1. */
   --fotogrond:   #F2F0EB;   /* exact de zweep waarop de productserie geschoten is,
                                zodat foto en tegel één oppervlak vormen */
   --lijn:        rgba(23, 24, 26, 0.14);
@@ -53,7 +54,9 @@
 
   /* goud — twee tokens, want één haalt de toets niet op beide gronden */
   --goud-merk:   #A27E30;   /* gemeten uit logo.png; haarlijn + op donker */
-  --goud-tekst:  #886A28;   /* 4,61:1 op papier; kapitaallabels */
+  --goud-tekst:  #816426;   /* geijkt op de DONKERSTE grond (--papier-2),
+                               niet op papier: de werk- en vragensectie staan op die band
+                               en daar zakte #886A28 naar 4,22:1. Nu ≥4,6:1 op beide. */
 
   /* donker */
   --donker:      #17181A;
@@ -584,3 +587,9 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .pakket li::before { content: ""; position: absolute; left: 0; top: 17px;
                      width: 10px; height: 1px; background: var(--goud-merk); }
 .paginakop { padding-top: clamp(128px, 17vh, 190px); padding-bottom: clamp(40px, 5vw, 64px); }
+
+/* Foto naast de dienstkop: geeft de dienstenpagina beeld zonder dat de
+   pakkettabel eronder in de verdrukking komt. Recht, zoals alle foto's. */
+.dienstkop-beeld { overflow: hidden; background: var(--papier-2); aspect-ratio: 3 / 2; }
+.dienstkop-beeld img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) { .dienstkop-beeld { aspect-ratio: 4 / 3; } }

@@ -631,6 +631,12 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
    gepositioneerd, want een grid-item op height:100% binnen een
    aspect-ratio-container blaast in WebKit op. */
 .product-beeld img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+/* Sfeerfoto: het product in zijn omgeving, dus de foto VULT de tegel en clipt
+   binnen de ronde hoeken. Bij hover zoomt hij mee met dezelfde --lift-veer als
+   de kaart -- geen aparte animatie, één beweging. */
+.product-sfeer { background: var(--vlak-2); overflow: hidden; }
+.product-sfeer img { object-fit: cover; scale: calc(1 + 0.05 * var(--lift)); }
+.product:hover .product-sfeer, .product:focus-within .product-sfeer { overflow: hidden; }
 /* Eruit springen bij hover: het product wordt groter, komt omhoog en werpt een
    echte slagschaduw -- alsof hij van de tegel af komt naar de kijker toe. Hangt
    aan --lift, dus dezelfde veer als de kaart zelf; niets springt los. */
@@ -656,6 +662,22 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .product-prijs { font-size: 1.0625rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .product form { margin: 16px 0 0; }
 .product .knop { width: 100%; }
+
+/* ---------- reviews ------------------------------------------------------ */
+/* Staat er alleen als inhoud.py echte reviews bevat. Geen sterren: een cijfer
+   dat we niet kunnen onderbouwen is een claim. */
+.reviews { display: grid; gap: 16px; }
+@media (min-width: 760px) { .reviews { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.review { margin: 0; padding: 28px 28px 26px; display: flex; flex-direction: column; }
+.review blockquote {
+  margin: 0; font-size: 1.0625rem; line-height: 1.5;
+  quotes: "\201E" "\201D";
+}
+.review blockquote::before { content: open-quote; color: var(--goud-tekst); }
+.review blockquote::after { content: close-quote; color: var(--goud-tekst); }
+.review figcaption { margin-top: auto; padding-top: 22px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.review figcaption b { font-weight: 600; font-size: 0.9375rem; }
+.review-wat { font-size: 0.8125rem; color: var(--gedempt); }
 
 /* ---------- veelgestelde vragen ----------------------------------------- */
 .vragen { display: grid; gap: 12px; }

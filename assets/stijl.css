@@ -286,12 +286,16 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 }
 .paneel.open { opacity: 1; scale: 1; translate: 0 0; visibility: visible; transition-delay: 0s; }
 @media (min-width: 900px) { .paneel { display: none; } }
-.paneel a {
+/* DIRECTE kinderen: `.paneel a` (0,1,1) wint van `.knop` (0,1,0), dus de
+   WhatsApp-knop in de voet van het paneel kreeg de menu-lettergrootte van
+   21px in plaats van zijn eigen 12px kapitaal. Gemeten op een schermafdruk
+   van de live site. */
+.paneel > a {
   display: flex; align-items: center; gap: 12px; min-height: 52px;
   padding-inline: 16px; border-radius: 8px; text-decoration: none;
   font-size: 1.3125rem; font-weight: 500; letter-spacing: -0.01em;
 }
-.paneel a:hover { background: rgba(23, 24, 26, 0.05); }
+.paneel > a:hover { background: rgba(23, 24, 26, 0.05); }
 .paneel .paneel-voet { margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--lijn); }
 .paneel .paneel-voet .knop { width: 100%; }
 @media (prefers-reduced-motion: reduce) {
@@ -593,3 +597,11 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .dienstkop-beeld { overflow: hidden; background: var(--papier-2); aspect-ratio: 3 / 2; }
 .dienstkop-beeld img { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 900px) { .dienstkop-beeld { aspect-ratio: 4 / 3; } }
+
+/* Zeven foto's in twee kolommen laat er één alleen achter op de laatste rij.
+   Die mag dan de volle breedte pakken; een halve tegel naast een gat leest als
+   een fout. Boven 900px tegelt het raster al netjes op 4+2 / 3+3 / 2+2+2. */
+@media (max-width: 899px) {
+  .werk-raster > :last-child { grid-column: span 2; }
+  .werk-raster > :last-child .werk-doos { aspect-ratio: 3 / 2; }
+}

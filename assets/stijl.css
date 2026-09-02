@@ -139,7 +139,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 
 .overslaan {
   position: absolute; left: -9999px; z-index: 100;
-  background: var(--inkt); color: var(--papier); padding: 12px 20px;
+  display: inline-flex; align-items: center; min-height: 44px;
+  background: var(--inkt); color: var(--papier); padding: 0 20px;
 }
 .overslaan:focus { left: 12px; top: 12px; }
 
@@ -243,7 +244,10 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 @media (min-width: 900px) {
   .pil-links { display: flex; flex: 1; align-items: center; gap: 26px; list-style: none; margin: 0; padding: 0; }
   .pil-actie { display: flex; flex: 1; justify-content: flex-end; }
-  .pil-actie .knop { min-height: 40px; padding: 0 18px; }
+  /* 44px, niet 40: dit is een echte knop met een vlak, en dan geldt de
+     44px-ondergrens ook op een laptop. Kale tekstlinks vallen daar niet
+     onder -- die tik je niet aan om iets te doen. */
+  .pil-actie .knop { min-height: 44px; padding: 0 18px; }
 }
 .pil-links a {
   display: inline-flex; align-items: center; min-height: 44px;

@@ -243,9 +243,9 @@
     bundelVoorstel();
   }
 
-  function leg(id, naam, prijs, beeld) {
+  function leg(id, naam, prijs, beeld, aantal) {
     if (!mand[id]) mand[id] = { naam: naam, prijs: prijs, beeld: beeld, aantal: 0 };
-    mand[id].aantal += 1;
+    mand[id].aantal += aantal || 1;
   }
 
   /* De mand springt alleen de EERSTE keer open. Daarna onderbreekt hij het
@@ -256,16 +256,20 @@
   qsa('form[action="/cart/add"]').forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
+      var qEl = f.querySelector('[name="quantity"]');
+      var q = qEl ? Math.max(1, Math.min(99, parseInt(qEl.value, 10) || 1)) : 1;
       leg(f.querySelector('[name="id"]').value, f.dataset.naam,
-          parseInt(f.dataset.prijs, 10), f.dataset.beeld);
+          parseInt(f.dataset.prijs, 10), f.dataset.beeld, q);
+      if (qEl) qEl.value = "1";
       teken();
       if (!mandGetoond) { mandGetoond = true; openMand(true); return; }
       var knop = f.querySelector('button[name="add"]');
       if (!knop || knop.dataset.bezig) return;
-      var was = knop.textContent;
+      // innerHTML, niet textContent: de mandknop draagt een icoon dat terug moet.
+      var was = knop.innerHTML;
       knop.dataset.bezig = "1";
-      knop.textContent = "Toegevoegd";
-      setTimeout(function () { knop.textContent = was; delete knop.dataset.bezig; }, 1400);
+      knop.innerHTML = '<svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4L16 6"/></svg><span>Toegevoegd</span>';
+      setTimeout(function () { knop.innerHTML = was; delete knop.dataset.bezig; }, 1400);
     });
   });
 
@@ -461,6 +465,58 @@
       if (!v) v = new Veer(0, prop(p, "--in2"), { respons: 0.4 });
       v.zet(0); v.naar(1);
     });
+  });
+
+  /* ---- 7b. productpagina: aantal en galerij ------------------------------
+     De stepper in het koopformulier schrijft in input[name=quantity]; de mand
+     leest dat veld bij het toevoegen. De galerij wisselt alleen het hoofdbeeld
+     (src, geen srcset) en de soort (sfeer of wit), zodat CSS de grond en de
+     pasvorm afleidt. Zonder JS blijft het eerste beeld gewoon staan. */
+  qsa(".koop-rij .stepper").forEach(function (st) {
+    var inp = st.querySelector("input");
+    st.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-stap]");
+      if (!b || !inp) return;
+      var n = (parseInt(inp.value, 10) || 1) + parseInt(b.dataset.stap, 10);
+      inp.value = String(Math.max(1, Math.min(99, n)));
+    });
+  });
+  qsa(".galerij").forEach(function (g) {
+    var hoofd = g.querySelector(".galerij-hoofd"), img = hoofd && hoofd.querySelector("img");
+    if (!img) return;
+    qsa(".galerij-thumb", g).forEach(function (t) {
+      t.addEventListener("click", function () {
+        qsa(".galerij-thumb", g).forEach(function (x) { x.setAttribute("aria-pressed", String(x === t)); });
+        img.removeAttribute("srcset"); img.removeAttribute("sizes");
+        img.src = t.dataset.src;
+        hoofd.dataset.soort = t.dataset.soort;
+      });
+    });
+  });
+
+  /* ---- 7c. werkfilters en voor/na ----------------------------------------
+     Filter: knoppen met data-filter; een kaart die tevoorschijn komt krijgt
+     --in meteen op 1, anders blijft hij op de 0 staan die de reveal hem gaf
+     voordat hij ooit in beeld was. Voor/na: een native range-input ligt over
+     de foto (toetsenbord, vinger en muis gratis); zijn waarde wordt --x. */
+  var kaarten = qsa(".werk-kaart");
+  qsa("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      qsa("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      var f = b.dataset.filter;
+      kaarten.forEach(function (k) {
+        var toon = !f || k.dataset.soort === f;
+        k.hidden = !toon;
+        if (toon) k.style.setProperty("--in", "1");
+      });
+    });
+  });
+  qsa(".voorna").forEach(function (v) {
+    var r = v.querySelector('input[type="range"]');
+    if (!r) return;
+    var zet = function () { v.style.setProperty("--x", r.value + "%"); };
+    r.addEventListener("input", zet);
+    zet();
   });
 
   /* ---- 8. reveal ---------------------------------------------------------

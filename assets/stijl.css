@@ -21,24 +21,10 @@
    beschrijft. CSS leidt daar translate, schaal, blur en schaduw uit af.
    ------------------------------------------------------------------------ */
 
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("fonts/instrument-sans-latin.woff2") format("woff2");
-  font-weight: 400 700;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-    U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("fonts/instrument-sans-latin-ext.woff2") format("woff2");
-  font-weight: 400 700;
-  font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
-    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+
+/* Lettertype en merkkleuren (--font, --accent, --accent-tekst, --accent-logo)
+   staan NIET hier: bouw.py schrijft ze in de <head> uit MERK in inhoud.py.
+   Dit bestand is voor elke detailer hetzelfde. */
 
 /* --rv (reveal-verschuiving) mag NIET erven: een foto-widget in een figure
    die zelf onthuld wordt, zou anders twee keer 18px verschuiven. */
@@ -58,9 +44,6 @@
      scroll-edge-waas erbij is het lichtste glas #1B1B1E en haalt deze tint
      9,94:1. Zonder die waas zakte hij naar 4,17:1. */
   --glas-tekst: #C3C5C9;
-  --goud-tekst: #A68131;   /* kapitaallabels — 4,66:1 op vlak-2 */
-  --merkgoud:   #A27E30;   /* gemeten uit hun logo; alleen sier en lijnwerk */
-  --goud-logo:  #C2993E;   /* lichter, alleen het logo en de focusring */
   --fotogrond:  #FFFFFF;   /* de productserie staat op wit (refs/witmaken.py) */
 
   --breed:      1240px;
@@ -90,7 +73,7 @@ body {
   margin: 0;
   background: var(--zwart);
   color: var(--papier);
-  font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font, sans-serif), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 17px;
   line-height: 1.6;
   font-weight: 400;
@@ -101,7 +84,7 @@ body {
 img, svg, video { display: block; max-width: 100%; }
 img { height: auto; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--goud-logo); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent-logo); outline-offset: 3px; }
 ::selection { background: var(--papier); color: var(--zwart); }
 [id] { scroll-margin-top: 96px; }   /* de zwevende pil dekt anders de sectiekop af */
 
@@ -251,7 +234,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 }
 .aankondiging span + span::before {
   content: ""; display: inline-block; width: 3px; height: 3px; border-radius: 50%;
-  background: var(--merkgoud); margin-right: 28px; vertical-align: middle;
+  background: var(--accent); margin-right: 28px; vertical-align: middle;
 }
 @media (max-width: 639px) { .aankondiging span:nth-child(2) { display: none; } }
 
@@ -308,17 +291,25 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 }
 @media (min-width: 640px) { .pil { padding-left: 18px; padding-right: 12px; } }
 
-.pil-merk { display: flex; align-items: center; min-height: 44px; text-decoration: none; }
+/* Het logo staat op ELK scherm in het midden; links het menu (op een telefoon
+   de hamburger), rechts de mand -- Job, 03-09. */
+.pil-merk { display: flex; align-items: center; min-height: 44px; text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); }
 .pil-merk img { height: 48px; width: auto; }
-@media (min-width: 900px) {
-  .pil-merk { position: absolute; left: 50%; transform: translateX(-50%); }
+.pil-hamburger { order: -1; }
+.pil-mand {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px; color: inherit; background: var(--vlak-2);
+  box-shadow: inset 0 1px 0 rgba(242, 241, 236, 0.08); transition: scale .1s ease-out;
 }
+.pil-mand:active { scale: 0.92; }
+@media (min-width: 900px) { .pil-mand { display: none; } }
+.ico { flex: none; }
 
 .pil-links { display: none; }
 .pil-actie { display: none; }
 @media (min-width: 900px) {
   .pil-links { display: flex; flex: 1; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0 0 0 8px; }
-  .pil-actie { display: flex; flex: 1; justify-content: flex-end; }
+  .pil-actie { display: flex; flex: 1; justify-content: flex-end; gap: 8px; }
   .pil-actie .knop { min-height: 44px; padding: 0 18px; }
 }
 .pil-links a {
@@ -385,7 +376,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
    stapelt hij: op een telefoon is naast elkaar altijd te smal. */
 /* Krap gehouden: de belofte, het beeld, de knoppen en de drie feiten moeten
    samen binnen 900px hoogte passen -- gemeten, niet geschat. */
-.hero { position: relative; padding-top: clamp(96px, 12vh, 132px); padding-bottom: 0; }
+.hero { position: relative; padding-top: clamp(96px, 12vh, 132px); padding-bottom: clamp(8px, 2vw, 24px); }
 /* Eén zachte lichtval, als een spot op een auto in een studio. 6%, neutraal
    papierwit — geen kleur, dus geen vlek. */
 .hero::before {
@@ -409,17 +400,6 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
    1280x800. Op een telefoon liggend, want daar telt elke pixel hoogte. */
 .hero-beeld { aspect-ratio: 1 / 1; border-radius: var(--r-groot); box-shadow: var(--schaduw-groot); }
 @media (max-width: 899px) { .hero-beeld { aspect-ratio: 16 / 10; } }
-/* De drie feiten staan onder de vouw-rand als één rij: het laatste dat je ziet
-   vóór je scrolt, en op een telefoon een leesbare kolom. */
-.hero-feiten {
-  list-style: none; margin: clamp(32px, 3.5vw, 44px) 0 0; padding: 0;
-  display: grid; gap: 16px;
-}
-@media (min-width: 760px) { .hero-feiten { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
-.hero-feiten li { display: grid; grid-template-columns: 20px 1fr; column-gap: 12px; align-items: start; }
-.hero-feiten .vink { color: var(--goud-tekst); grid-row: 1 / 3; margin-top: 2px; }
-.hero-feiten b { font-weight: 600; }
-.hero-feiten span { color: var(--gedempt); font-size: 0.9375rem; }
 /* ---------- diensten (widgets) ------------------------------------------- */
 .diensten { display: grid; gap: 16px; }
 .diensten > *, .shop-raster > *, .pakketten > *, .stappenrij > *, .duur > * { min-width: 0; }
@@ -447,7 +427,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .stap { padding: 26px 26px 28px; }
 .stap-nr {
   display: grid; place-content: center; width: 36px; height: 36px; border-radius: 50%;
-  background: var(--vlak-2); color: var(--goud-tekst);
+  background: var(--vlak-2); color: var(--accent-tekst);
   font-size: 0.9375rem; font-weight: 600; margin-bottom: 18px;
   box-shadow: inset 0 1px 0 rgba(242, 241, 236, 0.08);
 }
@@ -462,7 +442,9 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 @media (min-width: 560px) { .stappen { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(9, auto); } }
 @media (min-width: 960px) { .stappen { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(6, auto); } }
 .stappen li { display: flex; gap: 14px; align-items: baseline; padding: 8px 0; font-size: 0.9375rem; }
-.stappen li span { flex: none; width: 24px; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; color: var(--goud-tekst); }
+.stappen li span { flex: none; width: 24px; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-tekst); }
+.noot { margin-top: 18px; }
+.label-los { margin-top: 22px; }
 .duur { display: grid; gap: 14px; margin-top: 16px; grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 760px) { .duur { grid-template-columns: repeat(4, 1fr); } }
 .chip { padding: 20px 18px; text-align: center; }
@@ -501,39 +483,29 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .coating-tijd span { margin-top: 4px; font-size: 0.8125rem; color: var(--gedempt); }
 .coating-prijs { margin: auto 0 0; padding-top: 20px; display: flex; align-items: baseline; gap: 8px; }
 .coating-prijs b { font-size: 1.125rem; font-weight: 600; }
-.garantie { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; padding: 22px 26px; }
-.garantie .vink { color: var(--goud-tekst); width: 28px; height: 28px; flex: none; }
-.garantie div { flex: 1 1 240px; }
-.garantie b { display: block; font-weight: 600; }
-.garantie span { color: var(--gedempt); font-size: 0.9375rem; }
-.garantie .knop { margin-left: auto; }
-@media (max-width: 599px) { .garantie .knop { width: 100%; margin-left: 0; } }
+:is(.garantie, .regel) { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; padding: 22px 26px; }
+:is(.garantie, .regel) .vink { color: var(--accent-tekst); width: 28px; height: 28px; flex: none; }
+:is(.garantie, .regel) div { flex: 1 1 240px; }
+:is(.garantie, .regel) b { display: block; font-weight: 600; }
+:is(.garantie, .regel) span { color: var(--gedempt); font-size: 0.9375rem; }
+:is(.garantie, .regel) .knop { margin-left: auto; }
+@media (max-width: 599px) { :is(.garantie, .regel) .knop { width: 100%; margin-left: 0; } }
 
-/* ---------- werk -------------------------------------------------------- */
-/* Zes kolommen, en de spannen tellen per rij OP tot zes: 4+2, 3+3, 2+2+2. */
+/* ---------- werk: filters + uniform raster ------------------------------- */
+/* Twaalf foto's, 2 kolommen op telefoon, 3 op desktop. Uniform, want met
+   filters klopt een rij van 4+2 nooit meer. Een verborgen kaart bestaat niet. */
+.werk-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: clamp(24px, 3vw, 36px); }
 .werk-raster { display: grid; gap: clamp(12px, 1.6vw, 20px); grid-template-columns: repeat(2, 1fr); }
-@media (min-width: 900px) { .werk-raster { grid-template-columns: repeat(6, 1fr); align-items: start; } }
-.werk-kaart { margin: 0; }
-.werk-doos { aspect-ratio: 4 / 5; }
+@media (min-width: 900px) { .werk-raster { grid-template-columns: repeat(3, 1fr); } }
+.werk-kaart { margin: 0; min-width: 0; }
+.werk-kaart[hidden] { display: none; }
+.werk-doos { aspect-ratio: 1 / 1; }
+@media (min-width: 900px) { .werk-doos { aspect-ratio: 4 / 5; } }
 /* De doos stijgt, de foto erin zoomt — allebei aan dezelfde --lift. */
 .werk-doos img { scale: calc(1 + 0.04 * var(--lift)); }
 .werk-kaart figcaption {
   padding-top: 12px; text-align: center; font-size: 0.6875rem; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--gedempt);
-}
-@media (min-width: 900px) {
-  .werk-groot .werk-doos { aspect-ratio: 5 / 4; }
-  .werk-half  .werk-doos { aspect-ratio: 1 / 1; }
-  .werk-klein .werk-doos { aspect-ratio: 4 / 5; }
-  .werk-groot { grid-column: span 4; }
-  .werk-half  { grid-column: span 3; }
-  .werk-klein { grid-column: span 2; }
-}
-/* Zeven foto's in twee kolommen laat er één alleen achter; die pakt de volle
-   breedte, een halve tegel naast een gat leest als een fout. */
-@media (max-width: 899px) {
-  .werk-raster > :last-child { grid-column: span 2; }
-  .werk-raster > :last-child .werk-doos { aspect-ratio: 3 / 2; }
 }
 
 /* ---------- behandelingskiezer ------------------------------------------- */
@@ -556,7 +528,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .uitkomst-prijs { margin: 14px 0 0; display: flex; align-items: baseline; gap: 10px; }
 .uitkomst-prijs b { font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: calc(1em * -0.03 + 0.3px); }
 .kiezer-uitkomst .uitkomst-noot { margin-top: 14px; }
-.uitkomst-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; font-size: 0.9375rem; color: var(--papier); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--merkgoud); }
+.uitkomst-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; font-size: 0.9375rem; color: var(--papier); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
 /* De upsell staat op HETZELFDE vlak (geen derde laag): een gouden label en ruimte. */
 .upsell { margin-top: 22px; padding-top: 22px; display: grid; gap: 6px; }
 .upsell b { font-weight: 600; }
@@ -598,7 +570,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .draaitafel-schaal i { width: 16px; height: 2px; border-radius: 1px; background: rgba(242, 241, 236, 0.18); }
 .draaitafel-schaal b {
   --stand: 3; position: absolute; top: 0; left: 0; width: 16px; height: 2px; border-radius: 1px;
-  background: var(--merkgoud); translate: calc(var(--stand) * 24px) 0;
+  background: var(--accent); translate: calc(var(--stand) * 24px) 0;
 }
 
 .shop-raster { display: grid; gap: 16px; }
@@ -657,11 +629,14 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 /* Bij hover mag het product uit de tegel steken; dan moet de tegel niet meer
    clippen. Alleen dan, zodat de lichtval in rust binnen zijn ronde hoeken blijft. */
 .product:hover .product-beeld, .product:focus-within .product-beeld { overflow: visible; }
-.product-regel { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 18px 8px 0; }
-.product .kop-3 { font-size: 1.0625rem; }
+.product-link { display: block; color: inherit; text-decoration: none; }
+.product .kop-3 a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -11px; color: inherit; text-decoration: none; }
+.product-naam { margin: 14px 8px 0; font-size: 1.0625rem; }
 .product-prijs { font-size: 1.0625rem; font-weight: 600; font-variant-numeric: tabular-nums; }
-.product form { margin: 16px 0 0; }
-.product .knop { width: 100%; }
+/* Prijs links, mandknop rechts, op één regel -- Job, 03-09. */
+.kaart-koop { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 12px 8px 0; }
+.kaart-koop form { margin: 0; flex: none; }
+.knop-mand { gap: 8px; padding: 0 18px; }
 
 /* ---------- reviews ------------------------------------------------------ */
 /* Staat er alleen als inhoud.py echte reviews bevat. Geen sterren: een cijfer
@@ -673,8 +648,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
   margin: 0; font-size: 1.0625rem; line-height: 1.5;
   quotes: "\201E" "\201D";
 }
-.review blockquote::before { content: open-quote; color: var(--goud-tekst); }
-.review blockquote::after { content: close-quote; color: var(--goud-tekst); }
+.review blockquote::before { content: open-quote; color: var(--accent-tekst); }
+.review blockquote::after { content: close-quote; color: var(--accent-tekst); }
 .review figcaption { margin-top: auto; padding-top: 22px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
 .review figcaption b { font-weight: 600; font-size: 0.9375rem; }
 .review-wat { font-size: 0.8125rem; color: var(--gedempt); }
@@ -692,7 +667,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .vraag summary i { position: relative; flex: none; width: 14px; height: 14px; }
 .vraag summary i::before, .vraag summary i::after {
   content: ""; position: absolute; left: 0; top: 50%; width: 14px; height: 1.5px;
-  background: var(--goud-tekst); translate: 0 -50%; transition: rotate .25s var(--uit);
+  background: var(--accent-tekst); translate: 0 -50%; transition: rotate .25s var(--uit);
 }
 .vraag summary i::after { rotate: 90deg; }
 .vraag[open] summary i::after { rotate: 0deg; }
@@ -709,7 +684,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .contact .vlak { padding: 26px 28px; min-width: 0; }
 .contact-regel a { overflow-wrap: anywhere; }
 .contact-regel { margin: 8px 0 0; font-size: 1.0625rem; line-height: 1.5; }
-.contact-regel a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--merkgoud); }
+.contact-regel a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
 .tijden { margin-top: 10px; display: grid; gap: 2px; }
 .tijden div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; font-size: 0.9375rem; }
 .tijden span:last-child { color: var(--gedempt); }
@@ -732,7 +707,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .mand-teller {
   position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; padding: 0 6px;
   display: grid; place-content: center; border-radius: 999px;
-  background: var(--goud-logo); color: var(--zwart); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0;
+  background: var(--accent-logo); color: var(--zwart); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0;
 }
 .mand-teller[hidden] { display: none !important; }
 .mand-scherm {
@@ -783,6 +758,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 }
 .stepper button:active { scale: 0.88; }
 .stepper span { min-width: 24px; text-align: center; font-variant-numeric: tabular-nums; }
+.stepper input { width: 44px; height: 44px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: center; -moz-appearance: textfield; }
+.stepper input::-webkit-outer-spin-button, .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .mand-upsell {
   margin: 6px 24px 0; padding: 18px 20px; border-radius: 14px; background: var(--vlak-2);
   box-shadow: inset 0 1px 0 rgba(242, 241, 236, 0.06); display: grid; gap: 6px;
@@ -814,6 +791,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 }
 .balk-preview b { color: var(--papier); font-weight: 600; }
 
+.sectie-shop { padding-bottom: var(--ademing); }
+
 /* ---------- dienstenpagina ---------------------------------------------- */
 .paginakop { padding-top: clamp(112px, 15vh, 176px); padding-bottom: clamp(24px, 4vw, 48px); }
 .paginakop .display { margin: 22px auto 0; max-width: 16ch; }
@@ -835,7 +814,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .pakket-vol { background: var(--vlak-2); }
 .pakket-merk {
   display: inline-block; margin-bottom: 12px; padding: 5px 11px; border-radius: 999px;
-  background: rgba(194, 153, 62, 0.16); color: var(--goud-logo);
+  background: color-mix(in srgb, var(--accent-logo) 16%, transparent); color: var(--accent-logo);
   font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
 }
 .pakket-aantal { margin: 0 0 4px; }
@@ -844,7 +823,165 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .pakket .bedrag b { font-size: 1.75rem; font-weight: 600; line-height: 1; letter-spacing: calc(1em * -0.03 + 0.3px); }
 .pakket ul { list-style: none; margin: 20px 0 0; padding: 0; }
 .pakket li { display: flex; gap: 12px; padding: 7px 0; font-size: 0.9375rem; }
-.pakket li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 0.6em; border-radius: 50%; background: var(--merkgoud); }
+.pakket li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 0.6em; border-radius: 50%; background: var(--accent); }
+
+/* ---------- productpagina ------------------------------------------------ */
+/* Galerij links, informatie rechts; onder 900px gestapeld. Dezelfde regels als
+   de hero: binnen een tweekolommer staat tekst links, want een puntenlijst
+   centreren is onleesbaar. De secties eronder zijn weer gecentreerd. */
+.product-boven { padding-top: clamp(104px, 14vh, 152px); padding-bottom: clamp(32px, 4vw, 56px); }
+.product-raster { display: grid; gap: clamp(28px, 4vw, 56px); row-gap: 0; }
+.product-info { margin-top: clamp(24px, 4vw, 40px); }   /* mobiel: onder de thumbs */
+@media (min-width: 900px) {
+  .product-raster { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); grid-template-rows: auto 1fr; align-items: start; }
+  .product-raster .terug { grid-column: 2; grid-row: 1; margin-bottom: 4px; }
+  .product-raster .product-info { margin-top: 0; }
+  .product-raster .galerij { grid-column: 1; grid-row: 1 / 3; }
+  .product-raster .product-info { grid-column: 2; grid-row: 2; }
+}
+.galerij-hoofd {
+  position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+  border-radius: var(--r-groot); box-shadow: var(--schaduw-groot); background: var(--vlak-2);
+}
+/* Absoluut, niet als grid-item op 100% -- die combinatie met aspect-ratio
+   blaast in WebKit op (zie .product-beeld). */
+.galerij-hoofd img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.galerij-hoofd[data-soort="wit"] {
+  background: var(--fotogrond);
+  background-image: radial-gradient(ellipse 78% 62% at 50% 12%, #FFFFFF 0%, #F6F4F0 58%, #EAE7E1 100%);
+}
+.galerij-hoofd[data-soort="wit"] img { object-fit: contain; }
+.galerij-thumbs { display: flex; gap: 10px; margin-top: 12px; }
+/* Geen ring om de gekozen thumb: het verschil is dekking, 55% tegen 100%. */
+.galerij-thumb {
+  position: relative; width: 72px; height: 72px; padding: 0; border: 0; overflow: hidden;
+  border-radius: 12px; cursor: pointer; background: var(--vlak-2); opacity: 0.55; color: inherit;
+  box-shadow: inset 0 1px 0 rgba(242, 241, 236, 0.08), 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: opacity .18s var(--uit), scale .1s ease-out; -webkit-tap-highlight-color: transparent;
+}
+.galerij-thumb:hover { opacity: 0.8; }
+.galerij-thumb:active { scale: 0.95; }
+.galerij-thumb[aria-pressed="true"] { opacity: 1; }
+.galerij-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.galerij-thumb[data-soort="wit"] { background: var(--fotogrond); }
+.galerij-thumb[data-soort="wit"] img { object-fit: contain; }
+
+.product-info { min-width: 0; }
+/* Eén kaart staat in het midden, niet links in een leeg raster van drie. */
+.erbij-raster { display: grid; gap: 20px; justify-content: center; grid-template-columns: repeat(auto-fit, min(360px, 100%)); }
+.erbij-raster > * { min-width: 0; }
+.terug {
+  display: inline-flex; align-items: center; min-height: 44px; margin: -12px 0 8px; justify-self: start;
+  font-size: 0.9375rem; color: var(--gedempt); text-decoration: none;
+}
+.terug::before { content: "\2190"; margin-right: 8px; }
+.terug:hover { color: var(--papier); }
+.product-info .kop-2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
+.product-kort { margin: 18px 0 0; max-width: 44ch; color: var(--gedempt); }
+.product-punten { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
+.product-punten li { display: grid; grid-template-columns: 20px 1fr; column-gap: 12px; align-items: start; font-size: 0.9375rem; }
+.product-punten .vink { color: var(--accent-tekst); margin-top: 1px; }
+/* Wat er in een bundel zit: elke regel een link met de losse prijs ernaast. */
+.bevat { margin-top: 24px; padding: 22px 26px; }
+.bevat ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.bevat li { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; font-size: 0.9375rem; }
+.bevat li a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -8px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+.bevat li span:last-child { color: var(--gedempt); }
+.bevat .meta { margin: 12px 0 0; }
+/* Prijs groot en zonder omweg, dan aantal en één brede knop. Geen levertijd,
+   geen voorraad, geen keurmerk: wat niet vaststaat, staat er niet. */
+.product-koop { margin-top: 24px; padding: 22px 24px 24px; }
+.product-koop .product-prijs { display: block; font-size: 2rem; line-height: 1; letter-spacing: calc(1em * -0.03 + 0.3px); }
+.koop-rij { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 0; }
+.koop-rij .stepper { flex: none; background: var(--vlak-2); box-shadow: inset 0 1px 0 rgba(242, 241, 236, 0.08); }
+.koop-rij .knop { flex: 1 1 200px; }
+/* Gebruik: dezelfde stappenrij als "zo gaat het", zonder kopje per stap. */
+.stap-tekst { display: block; font-size: 0.9375rem; line-height: 1.5; }
+.dosering-kop { margin-top: clamp(28px, 3.5vw, 40px); }
+.dosering { display: grid; gap: 14px; margin: 12px auto 0; max-width: 560px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.dosering .chip b { font-size: 1.125rem; }
+.dosering .chip span { font-size: 0.9375rem; color: var(--papier); }
+.product-veilig { max-width: var(--smal); margin: 16px auto 0; }
+.welniet { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.welniet .vlak { padding: 24px 26px; }
+.welniet-tekst { margin: 10px 0 0; font-size: 1.0625rem; line-height: 1.5; }
+.regel { margin-top: 20px; }
+
+/* ---------- vertrouwen: de vier feiten als rij onder de hero -------------- */
+#vertrouwen { padding-top: clamp(28px, 4vw, 48px); }
+.vertrouwen { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .vertrouwen { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+.vertrouwen > * { min-width: 0; }
+.punt { padding: 20px 20px 22px; display: grid; grid-template-columns: 22px 1fr; column-gap: 12px; align-items: start; }
+.punt .vink { color: var(--accent-tekst); width: 22px; height: 22px; grid-row: 1 / 3; margin-top: 1px; }
+.punt b { font-weight: 600; font-size: 0.9375rem; line-height: 1.35; }
+.punt .meta { display: block; margin-top: 4px; font-size: 0.875rem; }
+
+/* ---------- voor / na ----------------------------------------------------- */
+/* Twee foto's over elkaar; de "na" wordt geknipt tot --x. Een native
+   range-input ligt onzichtbaar over de hele foto: slepen met vinger of muis en
+   pijltoetsen werken zonder één regel pointer-code. */
+.voorna { --x: 50%; position: relative; margin: 0; aspect-ratio: 4 / 3; overflow: hidden; }
+@media (min-width: 700px) { .voorna { aspect-ratio: 16 / 9; } }
+.voorna + .voorna { margin-top: 20px; }
+.voorna img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.voorna-na { clip-path: inset(0 calc(100% - var(--x)) 0 0); }
+.voorna-greep { position: absolute; top: 0; bottom: 0; left: var(--x); width: 2px; margin-left: -1px; background: var(--papier); pointer-events: none; }
+.voorna-greep::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; translate: -50% -50%;
+  border-radius: 50%; background: var(--papier); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.voorna-label {
+  position: absolute; top: 14px; padding: 6px 12px; border-radius: 999px; pointer-events: none;
+  background: rgba(10, 10, 11, 0.6); color: var(--papier); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.voorna-label-na { left: 14px; }
+.voorna-label-voor { right: 14px; }
+.voorna input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; -webkit-appearance: none; appearance: none; }
+
+/* ---------- instagram ----------------------------------------------------- */
+.ig-raster { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 700px) { .ig-raster { gap: 12px; grid-template-columns: repeat(6, 1fr); } }
+.ig-tegel { aspect-ratio: 1 / 1; border-radius: 12px; }
+.ig-tegel img { scale: calc(1 + 0.04 * var(--lift)); }
+
+/* ---------- cta-band ------------------------------------------------------ */
+.cta-band { padding: clamp(32px, 5vw, 56px) clamp(22px, 4vw, 48px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.cta-band .kop-2 { max-width: 16ch; font-size: clamp(1.6rem, 3.2vw, 2.6rem); }
+.cta-band .lood { margin: 0; max-width: 34ch; color: var(--gedempt); }
+.cta-band .knop { margin-top: 6px; }
+
+/* ---------- dienstkaart: een zichtbare knop onderin ----------------------- */
+.dienst-knop { display: inline-flex; align-items: center; min-height: 44px; margin: 8px 0 -8px; font-size: 0.875rem; font-weight: 600; color: var(--papier); }
+.dienst-knop::after { content: "\2192"; margin-left: 8px; color: var(--accent-tekst); }
+
+/* ---------- zwevende WhatsApp-knop, alleen op een telefoon ---------------- */
+/* Boven de conceptbalk (52px); zonder balk mag dit 16px worden. */
+.wa-zweef {
+  position: fixed; right: 16px; bottom: calc(52px + env(safe-area-inset-bottom)); z-index: 55;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 20px 0 16px;
+  border-radius: 999px; background: var(--papier); color: var(--zwart); text-decoration: none;
+  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 16px 32px -12px rgba(0, 0, 0, 0.9);
+  transition: scale .1s ease-out; -webkit-tap-highlight-color: transparent;
+}
+.wa-zweef:active { scale: 0.96; }
+/* Onder 400px alleen het icoon: op 320px overlapte de volle pil met de laatste
+   ankerchip en met een mandknop aan de vouw (uicheck). */
+@media (max-width: 399px) { .wa-zweef { width: 52px; padding: 0; justify-content: center; } .wa-zweef span { display: none; } }
+@media (min-width: 900px) { .wa-zweef { display: none; } }
+
+/* ---------- producten: twee naast elkaar op een telefoon ------------------ */
+@media (max-width: 639px) {
+  .shop-raster { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .shop-raster > :last-child:nth-child(odd) { grid-column: span 2; }   /* geen wees */
+  .product { padding: 10px 10px 12px; }
+  .product-naam { margin: 12px 4px 0; font-size: 0.9375rem; }
+  .kaart-koop { margin: 10px 4px 0; }
+  .product-prijs { font-size: 1rem; }
+  .knop-mand { width: 44px; min-height: 44px; padding: 0; }
+  .knop-mand span { display: none; }
+}
 
 /* ==========================================================================
    VOORKEUREN — alle drie afgehandeld.
@@ -873,7 +1010,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 /* Meer contrast: lichtere bijschriften en een zichtbare ring om elk vlak.
    De ring is een box-shadow, geen border — en alleen op verzoek van de gebruiker. */
 @media (prefers-contrast: more) {
-  :root { --gedempt: #B4B6BA; --goud-tekst: #D2A94A; }
+  :root { --gedempt: #B4B6BA; --accent-tekst: var(--accent-logo); }
   .vlak, .pil, .paneel, .mand, .optie, .knop-glas, .kiezer-uitkomst, .mand-lijst li, .mand-upsell {
     box-shadow: inset 0 0 0 1px rgba(242, 241, 236, 0.45);
   }

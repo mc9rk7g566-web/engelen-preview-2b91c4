@@ -15,7 +15,8 @@
 <link rel="icon" href="assets/beeld/favicon.png" type="image/png">
 <script>document.documentElement.className+=" js-aan";</script>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-sans-latin.woff2" crossorigin>
-<link rel="stylesheet" href="assets/stijl.css?v=34e502ce">
+<style>@font-face{font-family:"Instrument Sans";src:url("assets/fonts/instrument-sans-latin.woff2") format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Instrument Sans";src:url("assets/fonts/instrument-sans-latin-ext.woff2") format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}:root{--font:"Instrument Sans";--accent:#A27E30;--accent-tekst:#A68131;--accent-logo:#C2993E}</style>
+<link rel="stylesheet" href="assets/stijl.css?v=c4cd41fc">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoWash",
  "name":"Engelen Car Detailing en Products","url":"https://www.engelencardetailing.nl/",
@@ -23,12 +24,11 @@
  "slogan":"Waar perfectie voorop staat",
  "address":{"@type":"PostalAddress","streetAddress":"Margrietstraat 43",
    "postalCode":"4711 HL","addressLocality":"St. Willebrord","addressCountry":"NL"},
- "openingHoursSpecification":[
-   {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],
-     "opens":"08:00","closes":"15:00"}],
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"15:00"}],
  "sameAs":["https://instagram.com/Engelen_car_detailing","https://tiktok.com/@Engelen_Car_Detailing"],
- "makesOffer":[{"@type":"Offer","name":"Exterieur reiniging","price":"34.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Interieur reiniging","price":"119.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Pakketten","price":"153.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Locatie en wagenpark","price":"142","priceCurrency":"EUR"}, {"@type":"Offer","name":"Polijsten","price":"181.44","priceCurrency":"EUR"}, {"@type":"Offer","name":"Coating","price":"74.95","priceCurrency":"EUR"}]}
+ "makesOffer":[{"@type":"Offer","name":"Exterieur detailing","price":"34.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Interieur detailing","price":"119.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Pakketten","price":"153.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Wagenpark en zakelijk","price":"142","priceCurrency":"EUR"}, {"@type":"Offer","name":"Polijsten en lakcorrectie","price":"181.44","priceCurrency":"EUR"}, {"@type":"Offer","name":"Coatings","price":"74.95","priceCurrency":"EUR"}]}
 </script>
+
 </head>
 <body>
 <a class="overslaan" href="#hoofd">Naar de hoofdinhoud</a>
@@ -40,18 +40,17 @@
         <img src="assets/beeld/logo-lockup-240.png" alt="" width="88" height="48">
       </a>
       <ul class="pil-links"><li><a href="diensten.html">Diensten</a></li><li><a href="index.html#werk">Werk</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#contact">Contact</a></li></ul>
-      <div class="pil-actie">
-        <a class="knop knop-glas mand-knop" href="shop.html">Winkelwagen
-          <span class="mand-teller" hidden>0</span></a>
-      </div>
+      <div class="pil-actie"><a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Plan je behandeling</a><a class="knop knop-glas mand-knop" href="shop.html"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>Winkelwagen</span>
+          <span class="mand-teller" hidden>0</span></a></div>
+      <a class="pil-mand mand-knop" href="shop.html" aria-label="Winkelwagen"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span class="mand-teller" hidden>0</span></a>
       <button class="pil-hamburger" type="button" aria-expanded="false"
               aria-controls="site-menu" aria-label="Menu openen"><span></span></button>
     </nav>
     <div class="paneel" id="site-menu">
       <a href="diensten.html">Diensten</a><a href="index.html#werk">Werk</a><a href="shop.html">Shop</a><a href="index.html#contact">Contact</a>
       <div class="paneel-voet">
-        <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210" rel="noopener">Afspraak via WhatsApp</a>
-        <a class="knop knop-glas mand-knop" href="shop.html">Winkelwagen
+        <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Plan je behandeling</a>
+        <a class="knop knop-glas mand-knop" href="shop.html"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>Winkelwagen</span>
           <span class="mand-teller" hidden>0</span></a>
       </div>
     </div>
@@ -63,71 +62,26 @@
   <div class="omhulsel">
     <div class="hero-raster">
       <div class="hero-tekst">
-        <h1 class="display hero-kop">Krasvrij wassen is<br>geen optie.<br>Het is de standaard.</h1>
-        <p class="lood hero-lood">Elke auto wordt gewassen volgens het 2&#8209;emmersysteem, zodat
-          het vuil dat eraf gaat niet opnieuw op de lak komt. Van een wasbeurt vanaf
-          €&nbsp;34,95 tot een NANO&#8209;coating die drie jaar meegaat.</p>
+        <h1 class="display hero-kop">Waar perfectie<br>voorop staat.</h1>
+        <p class="lood hero-lood">Professionele car detailing, lakcorrectie en coatings voor een resultaat dat je ziet én voelt.</p>
         <div class="hero-acties">
-          <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210" rel="noopener">Afspraak maken</a>
-          <a class="knop knop-glas" href="diensten.html">Bekijk de prijzen</a>
+          <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Plan je behandeling</a>
+          <a class="knop knop-glas" href="index.html#werk">Bekijk ons werk</a>
         </div>
       </div>
       <div class="vlak vlak-foto hero-beeld">
         <picture>
-          <source media="(max-width: 899px)"
-                  srcset="assets/beeld/hero-schuim-mob-700.webp 700w, assets/beeld/hero-schuim-mob-1000.webp 1000w"
-                  sizes="100vw">
-          <img src="assets/beeld/hero-schuim-1600.webp" srcset="assets/beeld/hero-schuim-700.webp 700w, assets/beeld/hero-schuim-1000.webp 1000w, assets/beeld/hero-schuim-1600.webp 1600w" sizes="(max-width: 1240px) 50vw, 600px" alt="Auto onder een laag schuim tijdens de voorwas" loading="eager" decoding="async">
+          <source media="(max-width: 899px)" srcset="assets/beeld/hero-lak-mob-700.webp 700w, assets/beeld/hero-lak-mob-1000.webp 1000w" sizes="100vw">
+          <img src="assets/beeld/hero-lak-1600.webp" srcset="assets/beeld/hero-lak-700.webp 700w, assets/beeld/hero-lak-1000.webp 1000w, assets/beeld/hero-lak-1600.webp 1600w" sizes="(max-width: 1240px) 50vw, 600px" alt="" loading="eager" decoding="async">
         </picture>
       </div>
     </div>
-    <ul class="hero-feiten"><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>2-emmersysteem</b><span>Krasvrij wassen is hier de standaard, geen optie.</span></li><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ook op locatie</b><span>Wij komen naar jou toe, ook voor een heel wagenpark.</span></li><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>2 jaar garantie</b><span>Op de keramische coating en de NANO-coating.</span></li></ul>
   </div>
 </section>
 
-<section class="sectie sectie-kort" id="bestsellers" data-sectie="bestsellers">
-  <div class="omhulsel">
-    <div class="sectie-kop reveal">
-      <h2 class="kop-2">Bestsellers.</h2>
-      <p class="lood">De eigen productlijn: zes middelen en drie bundels onder eigen naam, los te bestellen.</p>
-    </div>
-    <div class="shop-raster reveal-rij"><article class="vlak til product">
-      <div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/snow-shampoo-900.webp" srcset="assets/beeld/sfeer/snow-shampoo-500.webp 500w, assets/beeld/sfeer/snow-shampoo-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Snow Shampoo" loading="lazy" decoding="async"></div>
-      <div class="product-regel">
-        <h3 class="kop-3">Snow Shampoo</h3>
-        <span class="product-prijs cijfer">€&nbsp;17,95</span>
-      </div>
-      <form action="/cart/add" method="post" data-naam="Snow Shampoo"
-            data-prijs="1795" data-beeld="assets/beeld/product-snow-shampoo-500.webp">
-        <input type="hidden" name="id" value="ENG-SNOW">
-        <button class="knop knop-glas" type="submit" name="add">In winkelwagen</button>
-      </form>
-    </article><article class="vlak til product">
-      <div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/rims-cleaner-900.webp" srcset="assets/beeld/sfeer/rims-cleaner-500.webp 500w, assets/beeld/sfeer/rims-cleaner-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Rims Cleaner" loading="lazy" decoding="async"></div>
-      <div class="product-regel">
-        <h3 class="kop-3">Rims Cleaner</h3>
-        <span class="product-prijs cijfer">€&nbsp;19,95</span>
-      </div>
-      <form action="/cart/add" method="post" data-naam="Rims Cleaner"
-            data-prijs="1995" data-beeld="assets/beeld/product-rims-cleaner-500.webp">
-        <input type="hidden" name="id" value="ENG-RIMS">
-        <button class="knop knop-glas" type="submit" name="add">In winkelwagen</button>
-      </form>
-    </article><article class="vlak til product">
-      <div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/clean-interior-900.webp" srcset="assets/beeld/sfeer/clean-interior-500.webp 500w, assets/beeld/sfeer/clean-interior-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Clean Interior" loading="lazy" decoding="async"></div>
-      <div class="product-regel">
-        <h3 class="kop-3">Clean Interior</h3>
-        <span class="product-prijs cijfer">€&nbsp;14,95</span>
-      </div>
-      <form action="/cart/add" method="post" data-naam="Clean Interior"
-            data-prijs="1495" data-beeld="assets/beeld/product-clean-interior-500.webp">
-        <input type="hidden" name="id" value="ENG-INT">
-        <button class="knop knop-glas" type="submit" name="add">In winkelwagen</button>
-      </form>
-    </article></div>
-    <p class="midden knoprij">
-      <a class="knop knop-glas" href="shop.html">Bekijk alle producten</a></p>
-  </div>
+
+<section class="sectie-kort" id="vertrouwen" data-sectie="vertrouwen">
+  <div class="omhulsel"><ul class="vertrouwen reveal-rij"><li class="vlak punt"><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>2&#8209;emmersysteem</b><span class="meta">Krasvrij wassen is hier de standaard, geen optie.</span></li><li class="vlak punt"><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Ook op locatie</b><span class="meta">Wij komen naar jou toe, ook voor een heel wagenpark.</span></li><li class="vlak punt"><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Eigen projecten &amp; producten</b><span class="meta">Eigen foto's van het werk en zes producten onder eigen naam.</span></li><li class="vlak punt"><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>2 jaar garantie</b><span class="meta">Op de keramische coating en de NANO-coating.</span></li></ul></div>
 </section>
 <section class="sectie" id="diensten" data-sectie="diensten">
   <div class="omhulsel">
@@ -136,20 +90,22 @@
       <p class="lood">Alle bedragen op deze pagina gelden vanaf. Bij elke behandeling kies je uit meerdere niveaus.</p>
     </div>
     <div class="diensten reveal-rij"><a class="vlak til dienst" href="diensten.html#exterieur">
-      <span class="dienst-beeld"><img src="assets/beeld/werk-hand-1000.webp" srcset="assets/beeld/werk-hand-700.webp 700w, assets/beeld/werk-hand-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Exterieur reiniging" loading="lazy" decoding="async"></span>
+      <span class="dienst-beeld"><img src="assets/beeld/werk-hand-1000.webp" srcset="assets/beeld/werk-hand-700.webp 700w, assets/beeld/werk-hand-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Exterieur detailing" loading="lazy" decoding="async"></span>
       <span class="dienst-body">
-        <span class="kop-3">Exterieur reiniging</span>
+        <span class="kop-3">Exterieur detailing</span>
         <span class="meta">Velgen, voorwas, krasvrij wassen, deurlijsten, kleien en drogen. Te kiezen als Goud of Diamant.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;34,95</b></span>
         <span class="dienst-varianten">Goud € 34,95 &middot; Diamant € 54,95</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a><a class="vlak til dienst" href="diensten.html#interieur">
-      <span class="dienst-beeld"><img src="assets/beeld/werk-interieur-1000.webp" srcset="assets/beeld/werk-interieur-700.webp 700w, assets/beeld/werk-interieur-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Interieur reiniging" loading="lazy" decoding="async"></span>
+      <span class="dienst-beeld"><img src="assets/beeld/werk-interieur-1000.webp" srcset="assets/beeld/werk-interieur-700.webp 700w, assets/beeld/werk-interieur-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Interieur detailing" loading="lazy" decoding="async"></span>
       <span class="dienst-body">
-        <span class="kop-3">Interieur reiniging</span>
+        <span class="kop-3">Interieur detailing</span>
         <span class="meta">Stofzuigen, deurpanelen, lederen delen, middenconsole, dashboard, stuurwiel en matten.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;119,95</b></span>
         <span class="dienst-varianten">Goud € 119,95 &middot; Diamant € 139,95</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a><a class="vlak til dienst" href="diensten.html#pakketten">
       <span class="dienst-beeld"><img src="assets/beeld/werk-cla-1000.webp" srcset="assets/beeld/werk-cla-700.webp 700w, assets/beeld/werk-cla-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Pakketten" loading="lazy" decoding="async"></span>
@@ -158,34 +114,47 @@
         <span class="meta">Binnen en buiten in één afspraak. Het Showroom-pakket bevat bovendien polijsten in één stap.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;153,95</b></span>
         <span class="dienst-varianten">Goud € 153,95 &middot; Diamant € 192,95 &middot; Showroom € 295,-</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a><a class="vlak til dienst" href="diensten.html#locatie">
-      <span class="dienst-beeld"><img src="assets/beeld/werk-bus-1000.webp" srcset="assets/beeld/werk-bus-700.webp 700w, assets/beeld/werk-bus-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Locatie en wagenpark" loading="lazy" decoding="async"></span>
+      <span class="dienst-beeld"><img src="assets/beeld/werk-bus-1000.webp" srcset="assets/beeld/werk-bus-700.webp 700w, assets/beeld/werk-bus-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Wagenpark en zakelijk" loading="lazy" decoding="async"></span>
       <span class="dienst-body">
-        <span class="kop-3">Locatie &amp; wagenpark</span>
+        <span class="kop-3">Wagenpark &amp; zakelijk</span>
         <span class="meta">Wij komen naar jou toe, ook voor een wagenpark. Maandelijks één of twee keer, in overleg.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;142,-</b></span>
         <span class="dienst-varianten">Goud € 142,- &middot; Diamant € 177,95 &middot; Ultimate V.I.P. op aanvraag</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a><a class="vlak til dienst" href="diensten.html#polijsten">
-      <span class="dienst-beeld"><img src="assets/beeld/werk-polijsten-1000.webp" srcset="assets/beeld/werk-polijsten-700.webp 700w, assets/beeld/werk-polijsten-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Polijsten" loading="lazy" decoding="async"></span>
+      <span class="dienst-beeld"><img src="assets/beeld/werk-polijsten-1000.webp" srcset="assets/beeld/werk-polijsten-700.webp 700w, assets/beeld/werk-polijsten-1000.webp 1000w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Polijsten en lakcorrectie" loading="lazy" decoding="async"></span>
       <span class="dienst-body">
-        <span class="kop-3">Polijsten</span>
+        <span class="kop-3">Polijsten &amp; lakcorrectie</span>
         <span class="meta">Lakcorrectie in één, twee of drie stappen. Verwijdert krassen, swirls en doffe plekken.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;181,44</b></span>
         <span class="dienst-varianten">1 stap € 181,44 &middot; 2 stappen € 279,95 &middot; 3 stappen € 349,95</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a><a class="vlak til dienst" href="diensten.html#coating">
-      <span class="dienst-beeld"><img src="assets/beeld/werk-wiel-700.webp" srcset="assets/beeld/werk-wiel-700.webp 700w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Coating" loading="lazy" decoding="async"></span>
+      <span class="dienst-beeld"><img src="assets/beeld/werk-wiel-700.webp" srcset="assets/beeld/werk-wiel-700.webp 700w" sizes="(max-width: 699px) 92vw, (max-width: 1059px) 46vw, 30vw" alt="Coatings" loading="lazy" decoding="async"></span>
       <span class="dienst-body">
-        <span class="kop-3">Coating</span>
+        <span class="kop-3">Coatings</span>
         <span class="meta">Van een sealant die vier maanden beschermt tot een NANO-coating in twee lagen die drie jaar meegaat.</span>
         <span class="dienst-prijs"><span class="label">Vanaf</span> <b class="cijfer">€&nbsp;74,95</b></span>
         <span class="dienst-varianten">Reload 2.0 € 74,95 &middot; Carnauba € 89,95 &middot; Velgen € 149,95</span>
+        <span class="dienst-knop">Bekijk de pakketten</span>
       </span>
     </a></div>
     <p class="midden knoprij">
       <a class="knop knop-glas" href="diensten.html">Alle pakketten en wat erin zit</a></p>
+  </div>
+</section>
+<section class="sectie-kort" data-sectie="cta">
+  <div class="omhulsel omhulsel-smal">
+    <div class="vlak vlak-groot cta-band reveal">
+      <h2 class="kop-2">Benieuwd wat jouw auto nodig heeft?</h2>
+      <p class="lood">Stuur een bericht met het merk, het type en wat je gedaan wilt hebben.</p>
+      <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Stuur ons een WhatsApp</a>
+    </div>
   </div>
 </section>
 <section class="sectie sectie-kort" id="hoewerkt" data-sectie="hoewerkt">
@@ -196,7 +165,7 @@
     </div>
     <ol class="stappenrij reveal-rij"><li class="vlak stap"><b class="stap-nr cijfer">1</b><b class="kop-3">Stuur een bericht</b><span class="meta">Merk, type en wat je gedaan wilt hebben. Je krijgt een prijs op maat terug.</span></li><li class="vlak stap"><b class="stap-nr cijfer">2</b><b class="kop-3">Kies waar</b><span class="meta">Je brengt hem naar Margrietstraat 43 in St. Willebrord, of wij komen naar jou toe.</span></li><li class="vlak stap"><b class="stap-nr cijfer">3</b><b class="kop-3">Klaar binnen de tijd</b><span class="meta">Een wasbeurt duurt 1 tot 1,5 uur, een compleet pakket 2 tot 3 uur. Een coating moet 24 uur uitharden.</span></li></ol>
     <p class="midden knoprij">
-      <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210" rel="noopener">Afspraak maken</a></p>
+      <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210" rel="noopener">Plan je behandeling</a></p>
   </div>
 </section>
 <section class="sectie" id="proces" data-sectie="proces">
@@ -212,7 +181,7 @@
       <ol class="stappen"><li><span class="cijfer">01</span>Velgen reinigen</li><li><span class="cijfer">02</span>Voorwas</li><li><span class="cijfer">03</span>Krasvrij wassen</li><li><span class="cijfer">04</span>Deurlijsten reinigen</li><li><span class="cijfer">05</span>Kleien van de lak</li><li><span class="cijfer">06</span>Metaaldeeltjes van de lak verwijderen</li><li><span class="cijfer">07</span>Hang- en sluitwerk reinigen</li><li><span class="cijfer">08</span>Drogen van de lak</li><li><span class="cijfer">09</span>Lederen delen voeden</li><li><span class="cijfer">10</span>Ramen streeploos</li><li><span class="cijfer">11</span>Stofzuigen</li><li><span class="cijfer">12</span>Deurpanelen behandelen</li><li><span class="cijfer">13</span>Lederen delen behandelen</li><li><span class="cijfer">14</span>Middenconsole reinigen</li><li><span class="cijfer">15</span>Dashboard en stuurwiel reinigen</li><li><span class="cijfer">16</span>Matten behandelen</li><li><span class="cijfer">17</span>Plastic delen behandelen</li><li><span class="cijfer">18</span>Lederen of stoffen zetels reinigen</li></ol>
     </div>
     <div class="duur reveal-rij"><div class="vlak chip"><b class="cijfer">1 – 1,5 uur</b><span>Exterieur reiniging</span></div><div class="vlak chip"><b class="cijfer">2 – 2,5 uur</b><span>Interieur reiniging</span></div><div class="vlak chip"><b class="cijfer">2 – 3 uur</b><span>Combipakket</span></div><div class="vlak chip"><b class="cijfer">2 – 3 dagen</b><span>Keramisch of NANO</span></div></div>
-    <p class="meta midden" style="margin-top:18px">Per voertuig kan dit verschillen.</p>
+    <p class="meta midden noot">Per voertuig kan dit verschillen.</p>
   </div>
 </section>
 <section class="sectie" id="coating" data-sectie="coating">
@@ -260,31 +229,67 @@
 <section class="sectie" id="werk" data-sectie="werk">
   <div class="omhulsel">
     <div class="sectie-kop reveal">
-      <h2 class="kop-2">Eigen foto&rsquo;s<br>van het werk.</h2>
+      <h2 class="kop-2">Eigen werk,<br>eigen foto&rsquo;s.</h2>
       <p class="lood">Personenauto&rsquo;s en bedrijfswagens, binnen en buiten. Geen stockbeeld.</p>
     </div>
-    <div class="werk-raster reveal-rij"><figure class="werk-kaart werk-groot">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-polijsten-1000.webp" srcset="assets/beeld/werk-polijsten-700.webp 700w, assets/beeld/werk-polijsten-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Machinaal polijsten" loading="lazy" decoding="async"></div>
+    <div class="werk-filters reveal"><button class="optie" type="button" data-filter="" aria-pressed="true">Alles</button><button class="optie" type="button" data-filter="exterieur" aria-pressed="false">Exterieur</button><button class="optie" type="button" data-filter="interieur" aria-pressed="false">Interieur</button><button class="optie" type="button" data-filter="polijsten" aria-pressed="false">Polijsten</button><button class="optie" type="button" data-filter="bedrijfswagen" aria-pressed="false">Bedrijfswagens</button></div>
+    <div class="werk-raster reveal-rij"><figure class="werk-kaart" data-soort="polijsten">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-polijsten-1000.webp" srcset="assets/beeld/werk-polijsten-700.webp 700w, assets/beeld/werk-polijsten-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Machinaal polijsten" loading="lazy" decoding="async"></div>
       <figcaption>Machinaal polijsten</figcaption>
-    </figure><figure class="werk-kaart werk-klein">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-hand-1000.webp" srcset="assets/beeld/werk-hand-700.webp 700w, assets/beeld/werk-hand-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Exterieur, met de hand" loading="lazy" decoding="async"></div>
-      <figcaption>Exterieur, met de hand</figcaption>
-    </figure><figure class="werk-kaart werk-half">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-interieur-1000.webp" srcset="assets/beeld/werk-interieur-700.webp 700w, assets/beeld/werk-interieur-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Interieur" loading="lazy" decoding="async"></div>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-coating2-1000.webp" srcset="assets/beeld/werk-coating2-700.webp 700w, assets/beeld/werk-coating2-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Exterieur" loading="lazy" decoding="async"></div>
+      <figcaption>Exterieur</figcaption>
+    </figure><figure class="werk-kaart" data-soort="interieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-interieur-1000.webp" srcset="assets/beeld/werk-interieur-700.webp 700w, assets/beeld/werk-interieur-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Interieur" loading="lazy" decoding="async"></div>
       <figcaption>Interieur</figcaption>
-    </figure><figure class="werk-kaart werk-half">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-wiel-700.webp" srcset="assets/beeld/werk-wiel-700.webp 700w" sizes="(max-width: 899px) 50vw, 40vw" alt="Velg en wielkast" loading="lazy" decoding="async"></div>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-hand-1000.webp" srcset="assets/beeld/werk-hand-700.webp 700w, assets/beeld/werk-hand-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Exterieur, met de hand" loading="lazy" decoding="async"></div>
+      <figcaption>Exterieur, met de hand</figcaption>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-wiel-700.webp" srcset="assets/beeld/werk-wiel-700.webp 700w" sizes="(max-width: 899px) 50vw, 33vw" alt="Velg en wielkast" loading="lazy" decoding="async"></div>
       <figcaption>Velg en wielkast</figcaption>
-    </figure><figure class="werk-kaart werk-klein">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-bus-1000.webp" srcset="assets/beeld/werk-bus-700.webp 700w, assets/beeld/werk-bus-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Bedrijfswagen" loading="lazy" decoding="async"></div>
+    </figure><figure class="werk-kaart" data-soort="bedrijfswagen">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-bus-1000.webp" srcset="assets/beeld/werk-bus-700.webp 700w, assets/beeld/werk-bus-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Bedrijfswagen" loading="lazy" decoding="async"></div>
       <figcaption>Bedrijfswagen</figcaption>
-    </figure><figure class="werk-kaart werk-klein">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-bagage-1000.webp" srcset="assets/beeld/werk-bagage-700.webp 700w, assets/beeld/werk-bagage-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Bagageruimte" loading="lazy" decoding="async"></div>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-seat-1000.webp" srcset="assets/beeld/werk-seat-700.webp 700w, assets/beeld/werk-seat-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Exterieur" loading="lazy" decoding="async"></div>
+      <figcaption>Exterieur</figcaption>
+    </figure><figure class="werk-kaart" data-soort="interieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-bagage-1000.webp" srcset="assets/beeld/werk-bagage-700.webp 700w, assets/beeld/werk-bagage-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Bagageruimte" loading="lazy" decoding="async"></div>
       <figcaption>Bagageruimte</figcaption>
-    </figure><figure class="werk-kaart werk-klein">
-      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-cla-1000.webp" srcset="assets/beeld/werk-cla-700.webp 700w, assets/beeld/werk-cla-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 40vw" alt="Exterieur" loading="lazy" decoding="async"></div>
+    </figure><figure class="werk-kaart" data-soort="bedrijfswagen">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-crafter-1000.webp" srcset="assets/beeld/werk-crafter-700.webp 700w, assets/beeld/werk-crafter-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Bedrijfswagen" loading="lazy" decoding="async"></div>
+      <figcaption>Bedrijfswagen</figcaption>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-cla-1000.webp" srcset="assets/beeld/werk-cla-700.webp 700w, assets/beeld/werk-cla-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Exterieur" loading="lazy" decoding="async"></div>
+      <figcaption>Exterieur</figcaption>
+    </figure><figure class="werk-kaart" data-soort="interieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-citroen-1000.webp" srcset="assets/beeld/werk-citroen-700.webp 700w, assets/beeld/werk-citroen-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Stuur en dashboard" loading="lazy" decoding="async"></div>
+      <figcaption>Stuur en dashboard</figcaption>
+    </figure><figure class="werk-kaart" data-soort="exterieur">
+      <div class="vlak til vlak-foto werk-doos"><img src="assets/beeld/werk-locatie-1000.webp" srcset="assets/beeld/werk-locatie-700.webp 700w, assets/beeld/werk-locatie-1000.webp 1000w" sizes="(max-width: 899px) 50vw, 33vw" alt="Exterieur" loading="lazy" decoding="async"></div>
       <figcaption>Exterieur</figcaption>
     </figure></div>
+  </div>
+</section>
+<section class="sectie sectie-kort" id="instagram" data-sectie="instagram">
+  <div class="omhulsel">
+    <div class="sectie-kop reveal">
+      <h2 class="kop-2">Meer werk<br>op Instagram.</h2>
+      
+    </div>
+    <div class="ig-raster reveal-rij"><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-1-1600.webp" srcset="assets/beeld/ig-1-700.webp 700w, assets/beeld/ig-1-1000.webp 1000w, assets/beeld/ig-1-1600.webp 1600w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-2-1000.webp" srcset="assets/beeld/ig-2-700.webp 700w, assets/beeld/ig-2-1000.webp 1000w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-3-1000.webp" srcset="assets/beeld/ig-3-700.webp 700w, assets/beeld/ig-3-1000.webp 1000w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-4-1000.webp" srcset="assets/beeld/ig-4-700.webp 700w, assets/beeld/ig-4-1000.webp 1000w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-5-1000.webp" srcset="assets/beeld/ig-5-700.webp 700w, assets/beeld/ig-5-1000.webp 1000w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a><a class="vlak til vlak-foto ig-tegel" href="https://instagram.com/Engelen_car_detailing" rel="noopener" aria-label="Instagram"><img src="assets/beeld/ig-6-1000.webp" srcset="assets/beeld/ig-6-700.webp 700w, assets/beeld/ig-6-1000.webp 1000w" sizes="(max-width: 699px) 33vw, 200px" alt="" loading="lazy" decoding="async"></a></div>
+    <p class="midden knoprij">
+      <a class="knop knop-glas" href="https://instagram.com/Engelen_car_detailing" rel="noopener">Bekijk meer van ons werk op Instagram</a></p>
+  </div>
+</section>
+<section class="sectie-kort" data-sectie="cta">
+  <div class="omhulsel omhulsel-smal">
+    <div class="vlak vlak-groot cta-band reveal">
+      <h2 class="kop-2">Benieuwd wat jouw auto nodig heeft?</h2>
+      <p class="lood">Stuur een bericht met het merk, het type en wat je gedaan wilt hebben.</p>
+      <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Stuur ons een WhatsApp</a>
+    </div>
   </div>
 </section>
 <section class="sectie" id="kiezer" data-sectie="kiezer">
@@ -307,7 +312,54 @@
       <div class="kiezer-uitkomst" id="kiezer-uitkomst" aria-live="polite"></div>
     </div>
   </div>
-  <script type="application/json" id="kiezer-data">{"tabel": {"buiten|opfrissen|hier": {"dienst": "exterieur", "dienstnaam": "Exterieur reiniging", "pakket": "Goud", "prijs": "34,95", "prijs_toon": "€ 34,95", "stappen": 7, "noot": "", "upsell": {"dienst": "exterieur", "dienstnaam": "Exterieur reiniging", "pakket": "Diamant", "prijs": "54,95", "prijs_toon": "€ 54,95", "stappen": 9, "tekst": "Twee stappen meer: metaaldeeltjes van de lak en het hang- en sluitwerk.", "verschil": "€ 20,-"}}, "buiten|grondig|hier": {"dienst": "exterieur", "dienstnaam": "Exterieur reiniging", "pakket": "Diamant", "prijs": "54,95", "prijs_toon": "€ 54,95", "stappen": 9, "noot": "", "upsell": {"dienst": "coating", "dienstnaam": "Coating", "pakket": "Reload 2.0", "prijs": "74,95", "prijs_toon": "€ 74,95", "stappen": 5, "tekst": "Sealende coating die de lak vier maanden beschermt. Op de prijslijst inclusief het Diamant-exterieurpakket.", "verschil": "€ 20,-"}}, "buiten|showroom|hier": {"dienst": "polijsten", "dienstnaam": "Polijsten", "pakket": "1 stap", "prijs": "181,44", "prijs_toon": "€ 181,44", "stappen": 5, "noot": "", "upsell": {"dienst": "polijsten", "dienstnaam": "Polijsten", "pakket": "2 stappen", "prijs": "279,95", "prijs_toon": "€ 279,95", "stappen": 6, "tekst": "Middelzware lakcorrectie erbij: verwijdert krassen en swirls.", "verschil": "€ 98,51"}}, "binnen|opfrissen|hier": {"dienst": "interieur", "dienstnaam": "Interieur reiniging", "pakket": "Goud", "prijs": "119,95", "prijs_toon": "€ 119,95", "stappen": 7, "noot": "", "upsell": {"dienst": "interieur", "dienstnaam": "Interieur reiniging", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "tekst": "Drie stappen meer: lederen delen voeden, plastic delen en de zetels.", "verschil": "€ 20,-"}}, "binnen|grondig|hier": {"dienst": "interieur", "dienstnaam": "Interieur reiniging", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "tekst": "Dan zit het Diamant-exterieurpakket erbij, in dezelfde afspraak.", "verschil": "€ 53,-"}}, "binnen|showroom|hier": {"dienst": "interieur", "dienstnaam": "Interieur reiniging", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "noot": "Voor het interieur is Diamant het hoogste niveau op de prijslijst.", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "tekst": "Daar zit het complete Diamant-exterieurpakket bij, plus polijsten in één stap en een sealende coating.", "verschil": "€ 155,05"}}, "allebei|opfrissen|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Goud", "prijs": "153,95", "prijs_toon": "€ 153,95", "stappen": 13, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 39,-"}}, "allebei|grondig|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "tekst": "Polijsten in één stap en een sealende coating met bescherming tot vier maanden erbij.", "verschil": "€ 102,05"}}, "allebei|showroom|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "noot": ""}, "buiten|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten.", "upsell": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "buiten|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "buiten|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag. Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "binnen|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten.", "upsell": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "binnen|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "binnen|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag. Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "allebei|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "", "upsell": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "allebei|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": ""}, "allebei|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Locatie & wagenpark", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag."}}, "whatsapp": "Hoi Engelen, ik wil graag een afspraak voor {pakket} ({prijs}){waar}. Auto: [merk en type].", "wa": "https://api.whatsapp.com/send?phone=31610539210"}</script>
+  <script type="application/json" id="kiezer-data">{"tabel": {"buiten|opfrissen|hier": {"dienst": "exterieur", "dienstnaam": "Exterieur detailing", "pakket": "Goud", "prijs": "34,95", "prijs_toon": "€ 34,95", "stappen": 7, "noot": "", "upsell": {"dienst": "exterieur", "dienstnaam": "Exterieur detailing", "pakket": "Diamant", "prijs": "54,95", "prijs_toon": "€ 54,95", "stappen": 9, "tekst": "Twee stappen meer: metaaldeeltjes van de lak en het hang- en sluitwerk.", "verschil": "€ 20,-"}}, "buiten|grondig|hier": {"dienst": "exterieur", "dienstnaam": "Exterieur detailing", "pakket": "Diamant", "prijs": "54,95", "prijs_toon": "€ 54,95", "stappen": 9, "noot": "", "upsell": {"dienst": "coating", "dienstnaam": "Coatings", "pakket": "Reload 2.0", "prijs": "74,95", "prijs_toon": "€ 74,95", "stappen": 5, "tekst": "Sealende coating die de lak vier maanden beschermt. Op de prijslijst inclusief het Diamant-exterieurpakket.", "verschil": "€ 20,-"}}, "buiten|showroom|hier": {"dienst": "polijsten", "dienstnaam": "Polijsten & lakcorrectie", "pakket": "1 stap", "prijs": "181,44", "prijs_toon": "€ 181,44", "stappen": 5, "noot": "", "upsell": {"dienst": "polijsten", "dienstnaam": "Polijsten & lakcorrectie", "pakket": "2 stappen", "prijs": "279,95", "prijs_toon": "€ 279,95", "stappen": 6, "tekst": "Middelzware lakcorrectie erbij: verwijdert krassen en swirls.", "verschil": "€ 98,51"}}, "binnen|opfrissen|hier": {"dienst": "interieur", "dienstnaam": "Interieur detailing", "pakket": "Goud", "prijs": "119,95", "prijs_toon": "€ 119,95", "stappen": 7, "noot": "", "upsell": {"dienst": "interieur", "dienstnaam": "Interieur detailing", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "tekst": "Drie stappen meer: lederen delen voeden, plastic delen en de zetels.", "verschil": "€ 20,-"}}, "binnen|grondig|hier": {"dienst": "interieur", "dienstnaam": "Interieur detailing", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "tekst": "Dan zit het Diamant-exterieurpakket erbij, in dezelfde afspraak.", "verschil": "€ 53,-"}}, "binnen|showroom|hier": {"dienst": "interieur", "dienstnaam": "Interieur detailing", "pakket": "Diamant", "prijs": "139,95", "prijs_toon": "€ 139,95", "stappen": 10, "noot": "Voor het interieur is Diamant het hoogste niveau op de prijslijst.", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "tekst": "Daar zit het complete Diamant-exterieurpakket bij, plus polijsten in één stap en een sealende coating.", "verschil": "€ 155,05"}}, "allebei|opfrissen|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Goud", "prijs": "153,95", "prijs_toon": "€ 153,95", "stappen": 13, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 39,-"}}, "allebei|grondig|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Diamant", "prijs": "192,95", "prijs_toon": "€ 192,95", "stappen": 18, "noot": "", "upsell": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "tekst": "Polijsten in één stap en een sealende coating met bescherming tot vier maanden erbij.", "verschil": "€ 102,05"}}, "allebei|showroom|hier": {"dienst": "pakketten", "dienstnaam": "Pakketten", "pakket": "Showroom", "prijs": "295,-", "prijs_toon": "€ 295,-", "stappen": 12, "noot": ""}, "buiten|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten.", "upsell": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "buiten|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "buiten|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag. Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "binnen|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten.", "upsell": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "binnen|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "binnen|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag. Op locatie staan alleen complete pakketten op de prijslijst, binnen en buiten."}, "allebei|opfrissen|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Goud", "prijs": "142,-", "prijs_toon": "€ 142,-", "stappen": 14, "noot": "", "upsell": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "tekst": "Vijf stappen meer, waaronder de zetels en de plastic delen.", "verschil": "€ 35,95"}}, "allebei|grondig|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": ""}, "allebei|showroom|locatie": {"dienst": "locatie", "dienstnaam": "Wagenpark & zakelijk", "pakket": "Diamant", "prijs": "177,95", "prijs_toon": "€ 177,95", "stappen": 19, "noot": "Boven Diamant staat op locatie alleen Ultimate V.I.P.; die prijs is op aanvraag."}}, "whatsapp": "Hoi Engelen, ik wil graag een afspraak voor {pakket} ({prijs}){waar}. Auto: [merk en type].", "wa": "https://api.whatsapp.com/send?phone=31610539210"}</script>
+</section>
+<section class="sectie sectie-kort" id="bestsellers" data-sectie="bestsellers">
+  <div class="omhulsel">
+    <div class="sectie-kop reveal">
+      <h2 class="kop-2">Bestsellers.</h2>
+      <p class="lood">De eigen productlijn: zes middelen en drie bundels onder eigen naam, los te bestellen.</p>
+    </div>
+    <div class="shop-raster reveal-rij"><article class="vlak til product">
+      <a class="product-link" href="product-snow-shampoo.html" tabindex="-1" aria-hidden="true"><div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/snow-shampoo-900.webp" srcset="assets/beeld/sfeer/snow-shampoo-500.webp 500w, assets/beeld/sfeer/snow-shampoo-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Snow Shampoo" loading="lazy" decoding="async"></div></a>
+      <h3 class="kop-3 product-naam"><a href="product-snow-shampoo.html">Snow Shampoo</a></h3>
+      <div class="kaart-koop">
+        <span class="product-prijs cijfer">€&nbsp;17,95</span>
+        <form class="" action="/cart/add" method="post" data-naam="Snow Shampoo"
+            data-prijs="1795" data-beeld="assets/beeld/product-snow-shampoo-500.webp">
+        <input type="hidden" name="id" value="ENG-SNOW">
+        
+        <button class="knop knop-glas knop-mand" type="submit" name="add"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>In winkelwagen</span></button>
+      </form>
+      </div>
+    </article><article class="vlak til product">
+      <a class="product-link" href="product-rims-cleaner.html" tabindex="-1" aria-hidden="true"><div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/rims-cleaner-900.webp" srcset="assets/beeld/sfeer/rims-cleaner-500.webp 500w, assets/beeld/sfeer/rims-cleaner-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Rims Cleaner" loading="lazy" decoding="async"></div></a>
+      <h3 class="kop-3 product-naam"><a href="product-rims-cleaner.html">Rims Cleaner</a></h3>
+      <div class="kaart-koop">
+        <span class="product-prijs cijfer">€&nbsp;19,95</span>
+        <form class="" action="/cart/add" method="post" data-naam="Rims Cleaner"
+            data-prijs="1995" data-beeld="assets/beeld/product-rims-cleaner-500.webp">
+        <input type="hidden" name="id" value="ENG-RIMS">
+        
+        <button class="knop knop-glas knop-mand" type="submit" name="add"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>In winkelwagen</span></button>
+      </form>
+      </div>
+    </article><article class="vlak til product">
+      <a class="product-link" href="product-clean-interior.html" tabindex="-1" aria-hidden="true"><div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/clean-interior-900.webp" srcset="assets/beeld/sfeer/clean-interior-500.webp 500w, assets/beeld/sfeer/clean-interior-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Clean Interior" loading="lazy" decoding="async"></div></a>
+      <h3 class="kop-3 product-naam"><a href="product-clean-interior.html">Clean Interior</a></h3>
+      <div class="kaart-koop">
+        <span class="product-prijs cijfer">€&nbsp;14,95</span>
+        <form class="" action="/cart/add" method="post" data-naam="Clean Interior"
+            data-prijs="1495" data-beeld="assets/beeld/product-clean-interior-500.webp">
+        <input type="hidden" name="id" value="ENG-INT">
+        
+        <button class="knop knop-glas knop-mand" type="submit" name="add"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>In winkelwagen</span></button>
+      </form>
+      </div>
+    </article></div>
+    <p class="midden knoprij">
+      <a class="knop knop-glas" href="shop.html">Bekijk alle producten</a></p>
+  </div>
 </section>
 <section class="sectie" id="shop" data-sectie="shop">
   <div class="omhulsel">
@@ -327,14 +379,15 @@
       <div class="uitgelicht-tekst">
         <p class="label">Uitgelicht</p>
         <h3 class="kop-2">Snow&nbsp;Shampoo</h3>
-        <p class="lood">De shampoo uit de eigen productlijn, in dezelfde fles
-          als op de foto. Sleep aan de fles om hem te draaien.</p>
+        <p class="lood">De shampoo uit de eigen productlijn, in dezelfde fles als op de foto. Sleep aan de fles om hem te draaien.</p>
         <p class="product-prijs cijfer">€&nbsp;17,95</p>
-        <form action="/cart/add" method="post" data-naam="Snow Shampoo" data-prijs="1795"
-              data-beeld="assets/beeld/product-snow-shampoo-500.webp">
-          <input type="hidden" name="id" value="ENG-SNOW">
-          <button class="knop" type="submit" name="add">In winkelwagen</button>
-        </form>
+        <form class="" action="/cart/add" method="post" data-naam="Snow Shampoo"
+            data-prijs="1795" data-beeld="assets/beeld/product-snow-shampoo-500.webp">
+        <input type="hidden" name="id" value="ENG-SNOW">
+        
+        <button class="knop" type="submit" name="add">In winkelwagen</button>
+      </form>
+        <a class="uitkomst-link" href="product-snow-shampoo.html">Alles over Snow Shampoo</a>
       </div>
     </div>
   </div>
@@ -362,7 +415,7 @@
       <div class="vlak">
         <p class="label">Adres</p>
         <p class="contact-regel">Margrietstraat 43<br>4711 HL St. Willebrord</p>
-        <p class="label" style="margin-top:22px">E-mail</p>
+        <p class="label label-los">E-mail</p>
         <p class="contact-regel"><a href="mailto:engelencardetailing@gmail.com">engelencardetailing@gmail.com</a></p>
       </div>
       <div class="vlak">
@@ -388,6 +441,7 @@
       <span>Margrietstraat 43, 4711 HL St. Willebrord</span></p>
   </div>
 </footer>
+<a class="wa-zweef" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3a7 7 0 0 0-6 10.6L3 17l3.5-1A7 7 0 1 0 10 3Z"/><path d="M7.2 8.6a3.8 3.8 0 0 0 4.2 4.2"/></svg><span>WhatsApp</span></a>
 <div class="mand-scherm" id="mand-scherm" data-mand-sluit aria-hidden="true"></div>
 <aside class="mand" id="mand" aria-label="Winkelwagen">
   <div class="mand-kop">
@@ -404,6 +458,6 @@
 </aside>
 <script type="application/json" id="bundel-data">{"bundels": [{"id": "ENG-BUNDEL", "naam": "Engelen Car Detailing Bundel", "cent": 7495, "foto": "bundel", "bevat": ["ENG-APC", "ENG-INT", "ENG-SNOW", "ENG-STAR", "ENG-RIMS"], "extra": ""}, {"id": "ENG-SET-SNOW", "naam": "SnowShampoo bundel", "cent": 2995, "foto": "snow-shampoo-set", "bevat": ["ENG-SNOW", "ENG-MITT"], "extra": ""}, {"id": "ENG-SET-INT", "naam": "Cleaninterior bundel", "cent": 1995, "foto": "clean-interior-set", "bevat": ["ENG-INT"], "extra": "twee kwasten"}], "producten": {"ENG-SNOW": {"naam": "Snow Shampoo", "cent": 1795, "foto": "snow-shampoo"}, "ENG-RIMS": {"naam": "Rims Cleaner", "cent": 1995, "foto": "rims-cleaner"}, "ENG-INT": {"naam": "Clean Interior", "cent": 1495, "foto": "clean-interior"}, "ENG-APC": {"naam": "All Purpose Cleaner", "cent": 1295, "foto": "all-purpose"}, "ENG-STAR": {"naam": "Star Glass", "cent": 1295, "foto": "star-glass"}, "ENG-MITT": {"naam": "Washmitt", "cent": 1495, "foto": "washmitt"}, "ENG-BUNDEL": {"naam": "Engelen Car Detailing Bundel", "cent": 7495, "foto": "bundel"}, "ENG-SET-SNOW": {"naam": "SnowShampoo bundel", "cent": 2995, "foto": "snow-shampoo-set"}, "ENG-SET-INT": {"naam": "Cleaninterior bundel", "cent": 1995, "foto": "clean-interior-set"}}}</script>
 <div class="balk-preview">Concept-preview &middot; ontwerp <b>Job Stolwerk</b> &middot; nog niet live</div>
-<script src="assets/site.js?v=9f504837" defer></script>
+<script src="assets/site.js?v=c2912aa8" defer></script>
 </body>
 </html>

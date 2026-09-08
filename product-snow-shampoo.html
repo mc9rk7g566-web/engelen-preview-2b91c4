@@ -1,174 +1,66 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Snow Shampoo &mdash; Engelen Car Detailing</title>
-<meta name="description" content="Reinigt en onderhoudt de lak door hem rijkelijk te bedekken met een fris ruikend deken van schuim. Weekt de vervuiling los van de lak, voorafgaand aan het wassen.">
-<meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Snow Shampoo &mdash; Engelen Car Detailing">
-<meta property="og:description" content="Reinigt en onderhoudt de lak door hem rijkelijk te bedekken met een fris ruikend deken van schuim. Weekt de vervuiling los van de lak, voorafgaand aan het wassen.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="nl_NL">
-<meta name="theme-color" content="#0A0A0B">
-<meta name="color-scheme" content="dark">
-<link rel="icon" href="assets/beeld/favicon.png" type="image/png">
-<script>document.documentElement.className+=" js-aan";</script>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-sans-latin.woff2" crossorigin>
-<style>@font-face{font-family:"Instrument Sans";src:url("assets/fonts/instrument-sans-latin.woff2") format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Instrument Sans";src:url("assets/fonts/instrument-sans-latin-ext.woff2") format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}:root{--font:"Instrument Sans";--accent:#A27E30;--accent-tekst:#A68131;--accent-logo:#C2993E}</style>
-<link rel="stylesheet" href="assets/stijl.css?v=c4cd41fc">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoWash",
- "name":"Engelen Car Detailing en Products","url":"https://www.engelencardetailing.nl/",
- "telephone":"+31610539210","email":"engelencardetailing@gmail.com","identifier":"KvK 42060416",
- "slogan":"Waar perfectie voorop staat",
- "address":{"@type":"PostalAddress","streetAddress":"Margrietstraat 43",
-   "postalCode":"4711 HL","addressLocality":"St. Willebrord","addressCountry":"NL"},
- "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"15:00"}],
- "sameAs":["https://instagram.com/Engelen_car_detailing","https://tiktok.com/@Engelen_Car_Detailing"],
- "makesOffer":[{"@type":"Offer","name":"Exterieur detailing","price":"34.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Interieur detailing","price":"119.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Pakketten","price":"153.95","priceCurrency":"EUR"}, {"@type":"Offer","name":"Wagenpark en zakelijk","price":"142","priceCurrency":"EUR"}, {"@type":"Offer","name":"Polijsten en lakcorrectie","price":"181.44","priceCurrency":"EUR"}, {"@type":"Offer","name":"Coatings","price":"74.95","priceCurrency":"EUR"}]}
-</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Snow Shampoo", "sku": "ENG-SNOW", "image": "https://www.engelencardetailing.nl/assets/beeld/sfeer/snow-shampoo-900.webp", "brand": {"@type": "Brand", "name": "Engelen Car Detailing"}, "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "17.95", "url": "https://www.engelencardetailing.nl/product-snow-shampoo.html"}, "description": "Reinigt en onderhoudt de lak door hem rijkelijk te bedekken met een fris ruikend deken van schuim. Weekt de vervuiling los van de lak, voorafgaand aan het wassen."}</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Engelen Car Detailing — private preview</title>
+<style>
+  *{margin:0;box-sizing:border-box}
+  body{min-height:100svh;display:flex;align-items:center;justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f2f0ec;
+    background:#15181c}
+  .card{text-align:center;padding:0 24px;max-width:380px;width:100%}
+  p.kick{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:#9aa0a6}
+  h1{font-size:1.5rem;font-weight:600;margin-top:10px}
+  form{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+  input{padding:14px 16px;background:#1e2227;border:1px solid #3a3f46;border-radius:6px;
+    color:#f2f0ec;font-size:1rem;text-align:center}
+  input:focus{outline:none;border-color:#6b8afd}
+  button{padding:14px;background:#f2f0ec;color:#15181c;border:none;border-radius:6px;
+    cursor:pointer;font-size:.85rem;font-weight:600}
+  button:disabled{opacity:.5;cursor:default}
+  .err{min-height:1.2em;margin-top:12px;font-size:.82rem;color:#ff8a80;opacity:0}
+  .err.show{opacity:1}
+</style>
 </head>
 <body>
-<a class="overslaan" href="#hoofd">Naar de hoofdinhoud</a>
-<header class="kop">
-  <div class="kop-rand" aria-hidden="true"></div>
-  <div class="kop-binnen">
-    <nav class="pil" aria-label="Hoofdmenu">
-      <a class="pil-merk" href="index.html" aria-label="Engelen Car Detailing, naar boven">
-        <img src="assets/beeld/logo-lockup-240.png" alt="" width="88" height="48">
-      </a>
-      <ul class="pil-links"><li><a href="diensten.html">Diensten</a></li><li><a href="index.html#werk">Werk</a></li><li><a href="shop.html" aria-current="page">Shop</a></li><li><a href="index.html#contact">Contact</a></li></ul>
-      <div class="pil-actie"><a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Plan je behandeling</a><a class="knop knop-glas mand-knop" href="shop.html"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>Winkelwagen</span>
-          <span class="mand-teller" hidden>0</span></a></div>
-      <a class="pil-mand mand-knop" href="shop.html" aria-label="Winkelwagen"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span class="mand-teller" hidden>0</span></a>
-      <button class="pil-hamburger" type="button" aria-expanded="false"
-              aria-controls="site-menu" aria-label="Menu openen"><span></span></button>
-    </nav>
-    <div class="paneel" id="site-menu">
-      <a href="diensten.html">Diensten</a><a href="index.html#werk">Werk</a><a href="shop.html" aria-current="page">Shop</a><a href="index.html#contact">Contact</a>
-      <div class="paneel-voet">
-        <a class="knop" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener">Plan je behandeling</a>
-        <a class="knop knop-glas mand-knop" href="shop.html"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>Winkelwagen</span>
-          <span class="mand-teller" hidden>0</span></a>
-      </div>
-    </div>
-  </div>
-</header>
-<div class="aankondiging" data-sectie="aankondiging"><span>Zaterdag 08:00 – 15:00</span><span>Maandag t/m vrijdag op afspraak</span><span>Ook op locatie</span></div>
-<main id="hoofd">
-<section class="product-boven" data-sectie="product">
-  <div class="omhulsel">
-    <div class="product-raster">
-      <a class="terug" href="shop.html">Alle producten</a>
-      <div class="galerij">
-        <div class="vlak galerij-hoofd" data-soort="sfeer"><img src="assets/beeld/sfeer/snow-shampoo-900.webp" srcset="assets/beeld/sfeer/snow-shampoo-500.webp 500w, assets/beeld/sfeer/snow-shampoo-900.webp 900w" sizes="(max-width: 899px) 100vw, 600px" alt="Snow Shampoo" loading="eager" decoding="async"></div>
-        <div class="galerij-thumbs"><button class="galerij-thumb" type="button" data-soort="sfeer" data-src="assets/beeld/sfeer/snow-shampoo-900.webp" aria-pressed="true" aria-label="Beeld 1 van 2"><img src="assets/beeld/sfeer/snow-shampoo-500.webp" alt="" loading="lazy" decoding="async"></button><button class="galerij-thumb" type="button" data-soort="wit" data-src="assets/beeld/uit/product-snow-shampoo.webp" aria-pressed="false" aria-label="Beeld 2 van 2"><img src="assets/beeld/uit/product-snow-shampoo.webp" alt="" loading="lazy" decoding="async"></button></div>
-      </div>
-      <div class="product-info">
-        <h1 class="kop-2">Snow Shampoo</h1>
-        <p class="lood product-kort">Reinigt en onderhoudt de lak door hem rijkelijk te bedekken met een fris ruikend deken van schuim. Weekt de vervuiling los van de lak, voorafgaand aan het wassen.</p>
-        <ul class="product-punten"><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Reinigt en onderhoudt de lak</span></li><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fris ruikend schuim</span></li><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Weekt vervuiling los vóór het wassen</span></li><li><svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Met een foamgun of vanuit de wasemmer</span></li></ul>
-        <div class="vlak product-koop">
-          <span class="product-prijs cijfer">€&nbsp;17,95</span>
-          <form class="koop-rij" action="/cart/add" method="post" data-naam="Snow Shampoo"
-            data-prijs="1795" data-beeld="assets/beeld/product-snow-shampoo-500.webp">
-        <input type="hidden" name="id" value="ENG-SNOW">
-        <div class="stepper">
-        <button type="button" data-stap="-1" aria-label="Eén minder">−</button>
-        <input class="cijfer" name="quantity" value="1" inputmode="numeric" pattern="[0-9]*" aria-label="Aantal">
-        <button type="button" data-stap="1" aria-label="Eén meer">+</button>
-      </div>
-        <button class="knop" type="submit" name="add">In winkelwagen</button>
-      </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</section>
-<section class="sectie sectie-kort" data-sectie="product-gebruik">
-  <div class="omhulsel">
-    <div class="sectie-kop reveal">
-      <h2 class="kop-2">Zo gebruik je het.</h2>
-      
-    </div>
-    <ol class="stappenrij reveal-rij"><li class="vlak stap"><b class="stap-nr cijfer">1</b><span class="stap-tekst">Spoel de auto vooraf af, zodat de grove vervuiling van de lak is.</span></li><li class="vlak stap"><b class="stap-nr cijfer">2</b><span class="stap-tekst">Begin onderaan en bedek het hele voertuig met een laag schuim, met een foamgun of vanuit de wasemmer.</span></li><li class="vlak stap"><b class="stap-nr cijfer">3</b><span class="stap-tekst">Laat het schuim inweken tot het begint af te breken.</span></li></ol>
-    <p class="label midden dosering-kop">Dosering</p><div class="dosering reveal-rij"><div class="vlak chip"><b>Foamgun</b><span>100 ml op 900 ml water</span></div><div class="vlak chip"><b>Wasemmer</b><span>80 ml op 12 liter water</span></div></div>
-    <div class="vragen product-veilig reveal"><details class="vlak vraag"><summary>Veiligheid<i aria-hidden="true"></i></summary><p>Veroorzaakt huidirritatie. Kan een allergische huidreactie veroorzaken. Veroorzaakt ernstig oogletsel.</p></details></div>
-  </div>
-</section>
-<section class="sectie sectie-kort" data-sectie="product-welniet">
-  <div class="omhulsel omhulsel-smal">
-    <div class="sectie-kop reveal">
-      <h2 class="kop-2">Waar het voor is.</h2>
-      
-    </div>
-    <div class="welniet reveal-rij"><div class="vlak"><p class="label">Wel voor</p><p class="welniet-tekst">De lak, als voorwas vóór het wassen.</p></div></div>
-  </div>
-</section>
-<section class="sectie sectie-kort" data-sectie="product-erbij">
-  <div class="omhulsel">
-    <div class="sectie-kop reveal">
-      <h2 class="kop-2">Wat je erbij nodig hebt.</h2>
-      
-    </div>
-    <div class="erbij-raster reveal-rij"><article class="vlak til product">
-      <a class="product-link" href="product-washmitt.html" tabindex="-1" aria-hidden="true"><div class="product-beeld product-sfeer"><img src="assets/beeld/sfeer/washmitt-900.webp" srcset="assets/beeld/sfeer/washmitt-500.webp 500w, assets/beeld/sfeer/washmitt-900.webp 900w" sizes="(max-width: 639px) 92vw, 30vw" alt="Washmitt" loading="lazy" decoding="async"></div></a>
-      <h3 class="kop-3 product-naam"><a href="product-washmitt.html">Washmitt</a></h3>
-      <div class="kaart-koop">
-        <span class="product-prijs cijfer">€&nbsp;14,95</span>
-        <form class="" action="/cart/add" method="post" data-naam="Washmitt"
-            data-prijs="1495" data-beeld="assets/beeld/product-washmitt-500.webp">
-        <input type="hidden" name="id" value="ENG-MITT">
-        
-        <button class="knop knop-glas knop-mand" type="submit" name="add"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h13l-1.1 8.4a1.6 1.6 0 0 1-1.6 1.4H6.2a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M7 6V5.2a3 3 0 0 1 6 0V6"/></svg><span>In winkelwagen</span></button>
-      </form>
-      </div>
-    </article></div>
-    <div class="vlak regel reveal">
-      <svg class="vink" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.25"/><path d="M6 10.2l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div><b>SnowShampoo bundel &mdash; €&nbsp;29,95</b><span>Bevat Snow Shampoo en Washmitt. Los kosten ze €&nbsp;32,90; de bundel is €&nbsp;2,95 minder.</span></div>
-      <a class="knop knop-glas" href="product-snow-shampoo-set.html">Bekijk de bundel</a>
-    </div>
-  </div>
-</section>
-
-
-</main>
-<footer class="voet" data-sectie="voet">
-  <div class="omhulsel midden">
-    <img src="assets/beeld/logo-lockup-240.png" alt="Engelen Car Detailing &amp; Products" width="110" height="60">
-    <p class="meta voet-regel">Car detailing &amp; products uit St. Willebrord. Waar perfectie voorop staat.</p>
-    <ul class="voet-menu"><li><a href="diensten.html">Diensten</a></li><li><a href="index.html#werk">Werk</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#contact">Contact</a></li></ul>
-    <ul class="voet-menu">
-      <li><a href="tel:+31610539210">06-10539210</a></li>
-      <li><a href="mailto:engelencardetailing@gmail.com">engelencardetailing@gmail.com</a></li>
-      <li><a href="https://instagram.com/Engelen_car_detailing" rel="noopener">Instagram</a></li>
-      <li><a href="https://tiktok.com/@Engelen_Car_Detailing" rel="noopener">TikTok</a></li>
-    </ul>
-    <p class="voet-onder"><span>&copy; 2026 Engelen Car Detailing &amp; Products &mdash; KvK 42060416</span>
-      <span>Margrietstraat 43, 4711 HL St. Willebrord</span></p>
-  </div>
-</footer>
-<a class="wa-zweef" href="https://api.whatsapp.com/send?phone=31610539210&text=Hoi%20Engelen%2C%20ik%20wil%20graag%20een%20behandeling%20plannen.%20Auto%3A%20%5Bmerk%20en%20type%5D." rel="noopener"><svg class="ico" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3a7 7 0 0 0-6 10.6L3 17l3.5-1A7 7 0 1 0 10 3Z"/><path d="M7.2 8.6a3.8 3.8 0 0 0 4.2 4.2"/></svg><span>WhatsApp</span></a>
-<div class="mand-scherm" id="mand-scherm" data-mand-sluit aria-hidden="true"></div>
-<aside class="mand" id="mand" aria-label="Winkelwagen">
-  <div class="mand-kop">
-    <b>Winkelwagen</b>
-    <button class="mand-sluit" type="button" data-mand-sluit aria-label="Sluiten"><span></span></button>
-  </div>
-  <ul class="mand-lijst" id="mand-lijst"></ul>
-  <div class="mand-upsell" id="mand-upsell" hidden></div>
-  <div class="mand-voet">
-    <div class="mand-totaal"><span>Totaal</span><span id="mand-totaal" class="cijfer">€&nbsp;0,00</span></div>
-    <p class="meta">Dit is een voorbeeldpagina; er wordt niets besteld en niets betaald.</p>
-    <button class="knop" type="button" data-mand-sluit>Verder kijken</button>
-  </div>
-</aside>
-<script type="application/json" id="bundel-data">{"bundels": [{"id": "ENG-BUNDEL", "naam": "Engelen Car Detailing Bundel", "cent": 7495, "foto": "bundel", "bevat": ["ENG-APC", "ENG-INT", "ENG-SNOW", "ENG-STAR", "ENG-RIMS"], "extra": ""}, {"id": "ENG-SET-SNOW", "naam": "SnowShampoo bundel", "cent": 2995, "foto": "snow-shampoo-set", "bevat": ["ENG-SNOW", "ENG-MITT"], "extra": ""}, {"id": "ENG-SET-INT", "naam": "Cleaninterior bundel", "cent": 1995, "foto": "clean-interior-set", "bevat": ["ENG-INT"], "extra": "twee kwasten"}], "producten": {"ENG-SNOW": {"naam": "Snow Shampoo", "cent": 1795, "foto": "snow-shampoo"}, "ENG-RIMS": {"naam": "Rims Cleaner", "cent": 1995, "foto": "rims-cleaner"}, "ENG-INT": {"naam": "Clean Interior", "cent": 1495, "foto": "clean-interior"}, "ENG-APC": {"naam": "All Purpose Cleaner", "cent": 1295, "foto": "all-purpose"}, "ENG-STAR": {"naam": "Star Glass", "cent": 1295, "foto": "star-glass"}, "ENG-MITT": {"naam": "Washmitt", "cent": 1495, "foto": "washmitt"}, "ENG-BUNDEL": {"naam": "Engelen Car Detailing Bundel", "cent": 7495, "foto": "bundel"}, "ENG-SET-SNOW": {"naam": "SnowShampoo bundel", "cent": 2995, "foto": "snow-shampoo-set"}, "ENG-SET-INT": {"naam": "Cleaninterior bundel", "cent": 1995, "foto": "clean-interior-set"}}}</script>
-<div class="balk-preview">Concept-preview &middot; ontwerp <b>Job Stolwerk</b> &middot; nog niet live</div>
-<script src="assets/site.js?v=c2912aa8" defer></script>
+<div class="card">
+  <p class="kick">Private preview</p>
+  <h1>Engelen Car Detailing</h1>
+  <form id="f">
+    <input id="pw" type="password" placeholder="Wachtwoord" autocomplete="off" autofocus />
+    <button id="btn" type="submit">Openen</button>
+  </form>
+  <p class="err" id="err"></p>
+</div>
+<script>
+const DATA={"s":"fgfcxssFseGPTBvl2SaSgg==","i":"OL+1AcKb0XXV1iAj","c":"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","n":250000};
+const KEY="site-gate-pw";
+const dec=s=>{const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;};
+async function unlock(pw){
+  const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:dec(DATA.s),iterations:DATA.n,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
+  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:dec(DATA.i)},key,dec(DATA.c));
+  return new TextDecoder().decode(pt);
+}
+async function tryShow(pw){
+  const html=await unlock(pw);
+  document.open();document.write(html);document.close();
+}
+const saved=sessionStorage.getItem(KEY);
+if(saved){tryShow(saved).catch(()=>sessionStorage.removeItem(KEY));}
+const f=document.getElementById("f"),pw=document.getElementById("pw"),err=document.getElementById("err"),btn=document.getElementById("btn");
+f.addEventListener("submit",async e=>{
+  e.preventDefault();err.classList.remove("show");btn.disabled=true;btn.textContent="Bezig…";
+  try{
+    await tryShow(pw.value.trim());
+    sessionStorage.setItem(KEY,pw.value.trim());
+  }catch(_){
+    err.textContent="Dat wachtwoord klopt niet.";err.classList.add("show");
+    btn.disabled=false;btn.textContent="Openen";pw.value="";pw.focus();
+  }
+});
+</script>
 </body>
 </html>
